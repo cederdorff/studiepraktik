@@ -1,0 +1,85 @@
+/* =========================================================
+   Syntax highlighting i EAAA-farver
+   Tertiære farver som supplement: Seafoam, Moss, Mellow Rose,
+   Canary Yellow og Almond Buff. Alle har AA-kontrast på
+   --kode-baggrund.
+   ========================================================= */
+
+.reveal .hljs {
+  display: block;
+  overflow-x: auto;
+  background: var(--kode-baggrund);
+  color: var(--quiet-gray);
+}
+
+/* HTML-tags og CSS-selektorer */
+.reveal .hljs-tag,
+.reveal .hljs-name,
+.reveal .hljs-selector-tag,
+.reveal .hljs-selector-pseudo,
+.reveal .hljs-keyword {
+  color: var(--mellow-rose);
+}
+
+.reveal .hljs-selector-class,
+.reveal .hljs-selector-id {
+  color: var(--canary-yellow);
+}
+
+/* Attributter og CSS-egenskaber */
+.reveal .hljs-attr,
+.reveal .hljs-variable,
+.reveal .hljs-template-variable {
+  color: var(--almond-buff);
+}
+
+.reveal .hljs-attribute,
+.reveal .hljs-property {
+  color: var(--seafoam);
+}
+
+/* Tekst og værdier */
+.reveal .hljs-string,
+.reveal .hljs-regexp {
+  color: var(--moss);
+}
+
+.reveal .hljs-number,
+.reveal .hljs-literal,
+.reveal .hljs-built_in,
+.reveal .hljs-title,
+.reveal .hljs-title.function_ {
+  color: var(--canary-yellow);
+}
+
+.reveal .hljs-comment,
+.reveal .hljs-meta {
+  color: var(--steel-gray);
+  font-style: italic;
+}
+
+.reveal .hljs-meta {
+  font-style: normal;
+}
+
+.reveal .hljs-punctuation,
+.reveal .hljs-operator {
+  color: var(--shy-green);
+}
+
+/* Linjenumre */
+.reveal .hljs-ln-numbers {
+  color: var(--steel-gray);
+  padding-right: 1em !important;
+  text-align: right;
+  user-select: none;
+}
+
+/* Trinvis fremhævning: dæmp de linjer, der ikke er i fokus */
+.reveal .hljs.has-highlights tr:not(.highlight-line) {
+  opacity: 0.3;
+}
+
+.reveal .hljs.has-highlights tr.highlight-line .hljs-ln-numbers {
+  color: var(--canary-yellow);
+}

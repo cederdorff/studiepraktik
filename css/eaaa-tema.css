@@ -1,0 +1,1817 @@
+/* =========================================================
+   EAAA dark mode-tema til reveal.js
+   Fortolkning af Erhvervsakademi Aarhus' designguide
+   ========================================================= */
+
+:root {
+  /* Primære farver */
+  --teal-green: #80b4bf;
+  --steel-gray: #808b94;
+
+  /* Sekundære farver */
+  --jade-green: #3a646d;
+  --shy-green: #bed4db;
+  --butter-yellow: #f4ebc0;
+  --canary-yellow: #f0e87d;
+  --quiet-gray: #f3f4f7;
+
+  /* Tertiære farver – kun som supplement */
+  --red-pear: #8f5442;
+  --valliant-poppy: #bd322c;
+  --nebulas-blue: #2c63a4;
+  --night-shadz: #962c59;
+  --russet-orange: #e47125;
+  --mellow-rose: #d9a6a1;
+  --tofu: #e8e3d8;
+  --almond-buff: #ccb390;
+  --meerkat: #a46f44;
+  --iris: #0087b1;
+  --moss: #84b18f;
+  --seafoam: #a2c5bf;
+
+  /* Roller i dark mode (baggrunde afledt af Jade Green) */
+  --baggrund: #0c1c20;
+  --flade: #152b31;
+  --flade-2: #1d3b43;
+  --kant: #2b5059;
+  --kode-baggrund: #08161a;
+  --tekst: var(--quiet-gray);
+  --tekst-sekundaer: var(--shy-green);
+  --tekst-daempet: var(--steel-gray); /* kun på --baggrund og --kode-baggrund (AA) */
+  --overskrift: var(--teal-green);
+  --highlight: var(--canary-yellow);
+
+  /* Timer og nedtælling */
+  --tid-god: var(--moss);
+  --tid-kort: var(--russet-orange);
+  --tid-slut: var(--valliant-poppy);
+
+  --font: "Montserrat", "Lucida Sans", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+
+/* ---------- Grundlag ---------- */
+html,
+body,
+.reveal-viewport {
+  background: var(--baggrund);
+}
+
+.reveal {
+  font-family: var(--font);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--tekst);
+}
+
+.reveal ::selection {
+  background: var(--highlight);
+  color: var(--baggrund);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+/* Hver slide fylder hele lærredet og er en flex-kolonne
+   (reveal viser slides med display: flex, se js/main.js) */
+.reveal .slides section {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 56px 80px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal .slides section.stack {
+  padding: 0;
+}
+
+/* Indhold ligger over den dekorative kulisse (:where = ingen specificitet) */
+:where(.reveal .slides section) > :where(:not(.deco, aside)) {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------- Typografi ---------- */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: var(--font);
+  color: var(--overskrift);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  text-transform: none;
+  text-shadow: none;
+  margin: 0 0 0.45em;
+}
+
+/* Designguidens greb: bold og light i samme overskrift */
+.reveal h1 strong,
+.reveal h2 strong {
+  font-weight: 800;
+}
+
+.reveal h1 {
+  font-size: 2.9em;
+}
+
+.reveal h2 {
+  font-size: 1.85em;
+}
+
+.reveal h3 {
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+}
+
+.reveal p {
+  margin: 0 0 0.6em;
+}
+
+.reveal strong {
+  font-weight: 700;
+}
+
+.reveal a {
+  color: var(--teal-green);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.06em;
+}
+
+.reveal a:hover {
+  color: var(--shy-green);
+}
+
+.reveal .kicker {
+  font-size: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+  margin-bottom: 1em;
+}
+
+.reveal .undertitel {
+  font-size: 0.9em;
+  font-weight: 300;
+  color: var(--tekst-sekundaer);
+}
+
+.reveal .lille {
+  font-size: 0.6em;
+  color: var(--tekst-sekundaer);
+}
+
+.reveal .stor {
+  font-size: 1.25em;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+.reveal .fremhaev {
+  color: var(--highlight);
+}
+
+.reveal .centreret {
+  text-align: center;
+  align-items: center;
+}
+
+.reveal :not(pre) > code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  background: var(--flade-2);
+  color: var(--tekst);
+  padding: 0.08em 0.4em;
+  border-radius: 0.3em;
+}
+
+
+/* ---------- Punktlister ---------- */
+.reveal ul.punkter,
+.reveal ol.trin {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reveal ul.punkter > li {
+  position: relative;
+  padding-left: 1.1em;
+  margin: 0.5em 0;
+}
+
+.reveal ul.punkter > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.42em;
+  height: 0.42em;
+  border-radius: 50%;
+  background: var(--teal-green);
+}
+
+/* Nummererede trin med runde tal */
+.reveal ol.trin {
+  counter-reset: trin;
+}
+
+.reveal ol.trin > li {
+  counter-increment: trin;
+  display: grid;
+  grid-template-columns: 1.7em 1fr;
+  gap: 0.6em;
+  align-items: center;
+  margin: 0.5em 0;
+}
+
+.reveal ol.trin > li::before {
+  content: counter(trin);
+  display: grid;
+  place-items: center;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  background: var(--teal-green);
+  color: var(--baggrund);
+  font-weight: 800;
+  font-size: 0.9em;
+}
+
+.reveal ol.trin small {
+  display: block;
+  font-size: 0.65em;
+  color: var(--tekst-sekundaer);
+}
+
+/* Tjekliste */
+.reveal ul.tjekliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reveal ul.tjekliste > li {
+  display: grid;
+  grid-template-columns: 1.2em 1fr;
+  gap: 0.55em;
+  align-items: start;
+  margin: 0.38em 0;
+}
+
+.reveal ul.tjekliste > li::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  margin-top: 0.2em;
+  border: 0.12em solid var(--teal-green);
+  border-radius: 0.25em;
+}
+
+
+/* ---------- Layout-hjælpere ---------- */
+.reveal .to-kolonner {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.reveal .to-kolonner--lige {
+  grid-template-columns: 1fr 1fr;
+}
+
+.reveal .tre-kolonner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.reveal .kort {
+  background: var(--flade);
+  border-radius: 28px;
+  padding: 32px 36px;
+}
+
+.reveal .kort h3 {
+  color: var(--overskrift);
+}
+
+.reveal .chip {
+  display: inline-block;
+  font-size: 0.6em;
+  font-weight: 700;
+  padding: 0.35em 1em;
+  border-radius: 999px;
+  border: 2px solid var(--kant);
+  color: var(--tekst-sekundaer);
+  margin: 0 0.4em 0.4em 0;
+}
+
+.reveal .chip--fremhaev {
+  border-color: var(--highlight);
+  color: var(--highlight);
+}
+
+
+/* ---------- Billeder ---------- */
+.reveal .rund-billede {
+  display: block;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  box-shadow: 0 0 0 14px rgba(128, 180, 191, 0.16);
+}
+
+.reveal .rund-billede--lille {
+  width: 300px;
+  height: 300px;
+}
+
+.reveal .browser-billede {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.reveal .logo {
+  align-self: flex-start;
+  height: 56px;
+  width: auto;
+}
+
+.reveal .centreret .logo {
+  align-self: center;
+}
+
+/* Fuldt screenshot med lille billedtekst */
+.reveal .skaermbillede {
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.reveal .skaermbillede .browser-billede {
+  width: auto;
+  max-width: 100%;
+  max-height: 540px;
+}
+
+.reveal .skaermbillede p {
+  margin: 0.8em 0 0;
+}
+
+
+/* ---------- Pladsholdere ---------- */
+.reveal .pladsholder {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 0.5em;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--shy-green);
+  border: 3px dashed var(--shy-green);
+  border-radius: 24px;
+  padding: 1em;
+  background: rgba(190, 212, 219, 0.06);
+}
+
+.reveal .pladsholder.rund-billede {
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.reveal .pladsholder-tekst {
+  color: var(--shy-green);
+  font-weight: 700;
+  border-bottom: 2px dashed var(--shy-green);
+}
+
+
+/* ---------- Kulisse: cirkler og prikket cirkel ---------- */
+.reveal .deco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reveal .cirkel {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.reveal .cirkel--fuld {
+  background: var(--sektion, var(--teal-green));
+  opacity: 0.16;
+}
+
+.reveal .cirkel--ring {
+  border: 2px solid var(--sektion, var(--teal-green));
+  opacity: 0.45;
+}
+
+.reveal .cirkel--prik {
+  background: var(--highlight);
+}
+
+.reveal .cirkel--prikket {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='none' stroke='%2380b4bf' stroke-width='1' stroke-linecap='round' stroke-dasharray='0 2.6'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.7;
+}
+
+
+/* ---------- Agenda ---------- */
+.reveal .agenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.66em;
+}
+
+.reveal .agenda li {
+  display: grid;
+  grid-template-columns: 7.2em 0.7em 1fr;
+  gap: 0.7em;
+  align-items: center;
+  padding: 0.42em 0.8em;
+  border-bottom: 1px solid var(--kant);
+  border-radius: 999px;
+}
+
+.reveal .agenda li:last-child {
+  border-bottom: 0;
+}
+
+.reveal .agenda__tid {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--tekst-sekundaer);
+}
+
+.reveal .agenda__prik {
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  background: var(--sektion);
+}
+
+.reveal .agenda li.milepael .agenda__prik {
+  background: transparent;
+  border: 0.14em solid var(--highlight);
+}
+
+.reveal .agenda li.milepael .agenda__titel {
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+/* Lille agenda på section-dividers */
+.reveal .agenda--mini {
+  font-size: 0.48em;
+}
+
+.reveal .agenda--mini li {
+  padding: 0.32em 0.8em;
+}
+
+.reveal .agenda li.er-overstaaet,
+.reveal .agenda li.er-overstaaet .agenda__tid {
+  color: var(--tekst-daempet);
+}
+
+.reveal .agenda li.er-overstaaet .agenda__prik {
+  opacity: 0.45;
+}
+
+.reveal .agenda li.er-her {
+  background: var(--flade-2);
+  border-bottom-color: transparent;
+  font-weight: 700;
+}
+
+.reveal .agenda li.er-her .agenda__tid {
+  color: var(--tekst);
+}
+
+
+/* ---------- Section-divider ---------- */
+.reveal .divider__indhold {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.reveal .divider h2 {
+  font-size: 2.3em;
+}
+
+.reveal .divider .kicker {
+  color: var(--sektion, var(--tekst-sekundaer));
+}
+
+
+/* ---------- Baggrundsvideo på forsiden ---------- */
+/* Ligger mellem reveal-baggrundene (fotoet som fallback) og slides */
+.reveal .slides {
+  z-index: 2;
+}
+
+.reveal > .cover-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.reveal > .cover-video.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mørk overlay i dark mode-baggrundsfarven, så teksten til venstre står skarpt.
+   z-index er nødvendig: ellers tegnes Vimeo-iframen oven på overlayet */
+.reveal > .cover-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgb(12 28 32 / 96%) 0%, rgb(12 28 32 / 90%) 45%, rgb(12 28 32 / 45%) 75%, rgb(12 28 32 / 20%) 100%),
+    linear-gradient(0deg, rgb(12 28 32 / 80%), transparent 45%);
+  pointer-events: none;
+}
+
+.reveal > .cover-video iframe {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 100vw;
+  height: 56.25vw;
+  min-width: 177.78vh;
+  min-height: 100vh;
+  border: 0;
+  transform: translate(-50%, -50%) scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal > .cover-video {
+    display: none;
+  }
+}
+
+html.reveal-print .reveal > .cover-video {
+  display: none !important;
+}
+
+
+/* ---------- Forside ---------- */
+.reveal .slides section.forside {
+  justify-content: space-between;
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.reveal .forside .logo {
+  height: 64px;
+}
+
+/* Blød skygge i baggrundsfarven, så teksten står skarpt i videoens lyse øjeblikke */
+.reveal .forside h1,
+.reveal .forside .kicker,
+.reveal .forside__lead,
+.reveal .forside__meta {
+  text-shadow: 0 2px 24px rgb(12 28 32 / 70%);
+}
+
+.reveal .forside h1 {
+  font-size: 3.7em;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.3em;
+}
+
+.reveal .forside .kicker {
+  color: var(--teal-green);
+  margin-bottom: 1.2em;
+}
+
+.reveal .forside__lead {
+  max-width: 620px;
+  font-size: 1.05em;
+  font-weight: 300;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.reveal .forside__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  font-size: 0.48em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+}
+
+.reveal .forside__meta::before {
+  content: "";
+  width: 56px;
+  height: 2px;
+  background: var(--teal-green);
+}
+
+.reveal .forside__meta strong {
+  color: var(--teal-green);
+}
+
+
+/* ---------- Titelslide og afslutning ---------- */
+.reveal .titel h1 {
+  margin-bottom: 0.25em;
+}
+
+.reveal .titel .logo {
+  margin-bottom: 48px;
+}
+
+
+/* ---------- Tjek ind: hvor langt er I? ---------- */
+.reveal .status-raekke {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  position: relative;
+  margin-top: 24px;
+}
+
+.reveal .status-raekke::before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 10%;
+  right: 10%;
+  border-top: 3px dotted var(--kant);
+}
+
+.reveal .status-trin {
+  text-align: center;
+}
+
+.reveal .status-trin__cirkel {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--flade);
+  border: 3px solid var(--farve);
+  color: var(--farve);
+  font-size: 1.1em;
+  font-weight: 800;
+}
+
+.reveal .status-trin p {
+  font-size: 0.6em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.reveal .status-trin small {
+  display: block;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: var(--tekst-sekundaer);
+}
+
+
+/* ---------- MDU: hvad kan man blive? ---------- */
+.reveal .job {
+  border-top: 8px solid var(--farve);
+}
+
+.reveal .job h3 {
+  color: var(--farve);
+  font-size: 0.8em;
+  margin-bottom: 0.7em;
+}
+
+.reveal .job__titler {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.reveal .job__titler li {
+  font-size: 0.5em;
+  font-weight: 600;
+  padding: 0.45em 0.9em;
+  border-radius: 999px;
+  background: var(--flade-2);
+}
+
+
+.reveal .fire-kolonner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.reveal .fire-kolonner .kort {
+  padding: 26px 24px;
+}
+
+.reveal .job__min {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.42em;
+  font-weight: 800;
+  padding: 0.3em 0.8em;
+  border-radius: 999px;
+  background: var(--highlight);
+  color: var(--baggrund);
+}
+
+
+/* ---------- MDU: tæt på erhvervslivet ---------- */
+.reveal .tal-raekke {
+  display: grid;
+  gap: 28px;
+}
+
+.reveal .tal-kort.tal-kort--venstre {
+  text-align: left;
+}
+
+.reveal .tal-kort.tal-kort--venstre .tal {
+  font-size: 2.2em;
+}
+
+.reveal .virksomheder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reveal .virksomheder span {
+  font-size: 0.55em;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  border-radius: 999px;
+  border: 2px solid var(--kant);
+  color: var(--tekst);
+}
+
+
+/* ---------- MDU: rigtige skemaer ---------- */
+.reveal .skemaer {
+  display: grid;
+  gap: 18px;
+  max-width: 940px;
+}
+
+.reveal .skemaer figure {
+  margin: 0;
+}
+
+.reveal .skemaer img {
+  display: block;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.reveal .skemaer figcaption {
+  font-size: 0.48em;
+  font-weight: 700;
+  color: var(--tekst-sekundaer);
+  margin-bottom: 8px;
+}
+
+
+/* ---------- MDU: video om hverdagen ---------- */
+.reveal .video-slide {
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.reveal .video-slide h2 {
+  align-self: flex-start;
+  font-size: 1.4em;
+}
+
+.reveal .video-ramme {
+  width: 880px;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--kode-baggrund);
+  box-shadow: 0 0 0 10px rgba(128, 180, 191, 0.16);
+}
+
+.reveal .video-ramme iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.reveal .video-slide p {
+  margin: 0.9em 0 0;
+}
+
+
+/* ---------- MDU: en uge ---------- */
+.reveal .uge {
+  display: grid;
+  grid-template-columns: 7.5em repeat(5, 1fr);
+  gap: 8px;
+  font-size: 0.5em;
+}
+
+.reveal .uge__dag {
+  font-weight: 700;
+  text-align: center;
+  color: var(--tekst-sekundaer);
+  padding-bottom: 4px;
+}
+
+.reveal .uge__tid {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--tekst-sekundaer);
+  align-self: center;
+}
+
+.reveal .uge__blok {
+  border-radius: 14px;
+  padding: 0.9em 0.6em;
+  text-align: center;
+  font-weight: 700;
+  color: var(--baggrund);
+  background: var(--farve);
+}
+
+.reveal .uge__blok--selv {
+  background: transparent;
+  border: 2px dashed var(--kant);
+  color: var(--tekst-sekundaer);
+  font-weight: 400;
+}
+
+
+/* ---------- Store tal ---------- */
+.reveal .tal {
+  display: block;
+  font-size: 3em;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--highlight);
+  margin-bottom: 0.1em;
+}
+
+.reveal .tal-kort {
+  text-align: center;
+}
+
+.reveal .tal-kort p {
+  font-size: 0.6em;
+  color: var(--tekst-sekundaer);
+  margin: 0;
+}
+
+
+/* ---------- Diagram: fra side til produkt ---------- */
+.reveal .produkt-vej {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 16px;
+  position: relative;
+}
+
+.reveal .produkt-vej::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: 12%;
+  right: 12%;
+  border-top: 3px dotted var(--kant);
+}
+
+.reveal .produkt-vej__trin {
+  text-align: center;
+}
+
+.reveal .produkt-vej__cirkel {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--flade);
+  border: 3px solid var(--farve);
+  font-weight: 800;
+  font-size: 0.8em;
+  line-height: 1.15;
+  color: var(--farve);
+  padding: 16px;
+}
+
+.reveal .produkt-vej__trin p {
+  font-size: 0.56em;
+  color: var(--tekst-sekundaer);
+  margin: 0;
+}
+
+
+/* ---------- Værktøjskassen ---------- */
+.reveal .vaerktoejer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.reveal .vaerktoejer .kort {
+  padding: 28px 30px;
+  border-left: 6px solid var(--farve);
+  border-radius: 18px;
+}
+
+.reveal .vaerktoejer h3 {
+  color: var(--farve);
+  font-size: 0.85em;
+}
+
+.reveal .vaerktoejer p {
+  font-size: 0.62em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* ---------- Sådan læser du koden ---------- */
+/* JavaScript-linjen er længst, så den kolonne får mest plads */
+.reveal .tre-kolonner.anatomi {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 0.95fr) minmax(0, 1.45fr);
+  gap: 24px;
+}
+
+.reveal .anatomi .kort {
+  border-top: 8px solid var(--farve);
+  padding: 28px 24px;
+}
+
+.reveal .anatomi h3 {
+  color: var(--farve);
+  font-size: 0.9em;
+}
+
+.reveal .anatomi__kode {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.52em;
+  padding: 0.9em 0.8em;
+  border-radius: 12px;
+  background: var(--kode-baggrund);
+  color: var(--tekst);
+  margin-bottom: 0.9em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.reveal .anatomi__forklaring {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.reveal .anatomi__forklaring li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.3em 0;
+}
+
+.reveal .anatomi__forklaring li::before {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Samme farve på kodestumpen og forklaringen */
+.reveal .anatomi .a1 { color: var(--mellow-rose); }
+.reveal .anatomi .a2 { color: var(--canary-yellow); }
+.reveal .anatomi .a3 { color: var(--seafoam); }
+
+
+/* ---------- Eksempler på apps ---------- */
+.reveal .app {
+  margin: 0;
+}
+
+/* Screenshots med eget browservindue og skygge – vises hele */
+.reveal .app img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  margin-bottom: 14px;
+}
+
+.reveal .app h3 {
+  font-size: 0.8em;
+}
+
+.reveal .app p {
+  font-size: 0.5em;
+  color: var(--tekst-sekundaer);
+  margin: 0 0 0.4em;
+}
+
+
+/* ---------- Diagram: kode × design × UX ---------- */
+.reveal .venn {
+  position: relative;
+  width: 640px;
+  height: 540px;
+}
+
+.reveal .venn__cirkel {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 3px solid var(--farve);
+  background: color-mix(in srgb, var(--farve) 14%, transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.reveal .venn__cirkel strong {
+  color: var(--farve);
+  font-size: 0.85em;
+  font-weight: 800;
+}
+
+.reveal .venn__cirkel span {
+  font-size: 0.48em;
+  color: var(--tekst);
+}
+
+.reveal .venn__cirkel--design {
+  left: 0;
+  top: 0;
+  padding-top: 90px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 48px;
+  padding-right: 120px;
+}
+
+.reveal .venn__cirkel--ux {
+  right: 0;
+  top: 0;
+  padding-top: 90px;
+  align-items: flex-end;
+  text-align: right;
+  padding-right: 48px;
+  padding-left: 120px;
+}
+
+.reveal .venn__cirkel--kode {
+  left: 150px;
+  bottom: 0;
+  justify-content: flex-end;
+  padding-bottom: 56px;
+}
+
+.reveal .venn__midte {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: 0.42em;
+  font-weight: 800;
+  text-align: center;
+  background: var(--highlight);
+  color: var(--baggrund);
+  border-radius: 999px;
+  padding: 0.5em 1em;
+  white-space: nowrap;
+}
+
+
+/* ---------- Tre sprog ---------- */
+.reveal .sprog {
+  text-align: center;
+}
+
+.reveal .sprog__cirkel {
+  width: 210px;
+  height: 210px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.9em;
+  font-weight: 800;
+  color: var(--baggrund);
+  background: var(--farve);
+}
+
+.reveal .sprog h3 {
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--tekst);
+}
+
+.reveal .sprog h3 strong {
+  font-weight: 800;
+  color: var(--farve);
+}
+
+.reveal .sprog p {
+  font-size: 0.6em;
+  color: var(--tekst-sekundaer);
+}
+
+
+/* ---------- Kodeslides ---------- */
+.reveal .kode-slide {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.reveal .kode-slide h2 {
+  font-size: 1.4em;
+  margin-bottom: 0.35em;
+}
+
+.reveal .kode-og-resultat {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.reveal .kode-kolonne {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.reveal .kode-kolonne .lille {
+  margin: 0;
+}
+
+.reveal pre {
+  position: relative; /* trin-kopierne fra highlight-pluginet placeres i forhold til pre */
+  width: 100%;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.44em;
+  line-height: 1.45;
+  box-shadow: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.reveal pre code {
+  font-family: var(--mono);
+  max-height: 500px;
+  padding: 20px 24px;
+  border-radius: 20px;
+}
+
+.reveal .resultat {
+  margin: 0;
+  background: var(--flade);
+  border-radius: 20px;
+  padding: 12px;
+}
+
+.reveal .resultat figcaption {
+  font-size: 0.42em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+  padding: 4px 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tre små prikker, som i et browservindue */
+.reveal .resultat figcaption::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--mellow-rose);
+  box-shadow: 16px 0 0 var(--almond-buff), 32px 0 0 var(--moss);
+  margin-right: 36px;
+}
+
+.reveal .resultat img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+}
+
+
+/* ---------- Knapper ---------- */
+.reveal .knap-raekke {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.reveal .knap {
+  font-family: var(--font);
+  font-size: 0.48em;
+  font-weight: 700;
+  padding: 0.55em 1.2em;
+  border-radius: 999px;
+  border: 2px solid var(--teal-green);
+  background: transparent;
+  color: var(--teal-green);
+  cursor: pointer;
+}
+
+.reveal .knap:hover,
+.reveal .knap:focus-visible {
+  background: var(--flade-2);
+  outline: none;
+}
+
+.reveal .knap--fyldt {
+  background: var(--teal-green);
+  color: var(--baggrund);
+}
+
+.reveal .knap--fyldt:hover,
+.reveal .knap--fyldt:focus-visible {
+  background: var(--shy-green);
+}
+
+
+/* ---------- Deadline ---------- */
+.reveal .deadline-cirkel {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--highlight);
+  color: var(--baggrund);
+  box-shadow: 0 0 0 14px rgba(240, 232, 125, 0.16);
+}
+
+.reveal .deadline-cirkel span {
+  font-size: 0.55em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.reveal .deadline-cirkel strong {
+  font-size: 2.4em;
+  font-weight: 800;
+  line-height: 1;
+}
+
+
+/* ---------- Fremvisningstimer ---------- */
+.reveal .timer {
+  --tilstand-farve: var(--tid-god);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.reveal .timer__ur {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background 0.3s;
+}
+
+.reveal .timer__ur svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.reveal .timer__spor {
+  fill: none;
+  stroke: var(--flade-2);
+  stroke-width: 6;
+}
+
+.reveal .timer__fremdrift {
+  fill: none;
+  stroke: var(--tilstand-farve);
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.25s linear, stroke 0.3s;
+}
+
+.reveal .timer__tid {
+  font-size: 3.2em;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--tilstand-farve);
+  line-height: 1;
+}
+
+.reveal .timer__status {
+  position: absolute;
+  bottom: 110px;
+  font-size: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+}
+
+.reveal .timer[data-tilstand="kort"] {
+  --tilstand-farve: var(--tid-kort);
+}
+
+.reveal .timer[data-tilstand="slut"] .timer__ur {
+  background: var(--tid-slut);
+}
+
+.reveal .timer[data-tilstand="slut"] .timer__tid,
+.reveal .timer[data-tilstand="slut"] .timer__status {
+  color: var(--quiet-gray);
+}
+
+.reveal .timer[data-tilstand="slut"] .timer__fremdrift {
+  stroke: var(--quiet-gray);
+}
+
+.reveal .timer__gruppe {
+  font-size: 1.6em;
+  font-weight: 300;
+  color: var(--overskrift);
+  margin-bottom: 0.4em;
+}
+
+.reveal .timer__gruppe strong {
+  font-weight: 800;
+}
+
+.reveal .timer .knap-raekke .knap {
+  font-size: 0.55em;
+}
+
+
+/* ---------- Antal grupper ---------- */
+.reveal .grupper-styring {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  background: var(--flade);
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 0.7em;
+}
+
+.reveal .grupper-styring .knap {
+  font-size: 0.75em;
+  width: 2.2em;
+  height: 2.2em;
+  padding: 0;
+}
+
+.reveal .grupper-styring strong {
+  color: var(--highlight);
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ---------- Studenterprojekter ---------- */
+.reveal .projekt {
+  text-align: center;
+}
+
+.reveal .projekt .pladsholder {
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+}
+
+.reveal .projekt h3 {
+  font-size: 0.8em;
+}
+
+.reveal .projekt p {
+  font-size: 0.55em;
+  color: var(--tekst-sekundaer);
+}
+
+.reveal .link-gitter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 40px;
+  font-size: 0.62em;
+}
+
+.reveal .link-gitter a {
+  display: block;
+  padding: 0.45em 0.9em;
+  border-radius: 999px;
+  background: var(--flade);
+  text-decoration: none;
+}
+
+
+/* ---------- Filtræ ---------- */
+.reveal .filtrae {
+  font-family: var(--mono);
+  font-size: 0.6em;
+  background: var(--kode-baggrund);
+  border-radius: 24px;
+  padding: 28px 36px;
+  list-style: none;
+  margin: 0;
+}
+
+.reveal .filtrae li {
+  display: grid;
+  grid-template-columns: 9em 1fr;
+  gap: 1em;
+  padding: 0.35em 0;
+}
+
+.reveal .filtrae li span:last-child {
+  font-family: var(--font);
+  color: var(--tekst-sekundaer);
+}
+
+.reveal .filtrae li.mappe {
+  grid-template-columns: 1fr;
+}
+
+.reveal .filtrae .mappe {
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+
+/* ---------- Tidsplan ---------- */
+.reveal .tidsplan {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.62em;
+}
+
+.reveal .tidsplan li {
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  gap: 0.8em;
+  padding: 0.55em 0;
+  border-bottom: 1px solid var(--kant);
+}
+
+.reveal .tidsplan li:last-child {
+  border-bottom: 0;
+}
+
+.reveal .tidsplan time {
+  font-weight: 800;
+  color: var(--teal-green);
+  font-variant-numeric: tabular-nums;
+}
+
+.reveal .tidsplan small {
+  display: block;
+  color: var(--tekst-sekundaer);
+  font-size: 0.85em;
+}
+
+.reveal .tidsplan .deadline time,
+.reveal .tidsplan .deadline span {
+  color: var(--highlight);
+  font-weight: 800;
+}
+
+
+/* ---------- Casen: oversigt ---------- */
+.reveal .case-slide {
+  justify-content: flex-start;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.reveal .case-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.reveal .case-top h2 {
+  margin: 0;
+}
+
+.reveal .case-kort {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 0.75fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Lidt gennemsigtige kort, så baggrundsfotoet anes */
+.reveal .case-slide .kort {
+  background: rgb(21 43 49 / 90%);
+  padding: 26px 28px;
+  font-size: 0.6em;
+}
+
+.reveal .case-slide .kort h3 {
+  font-size: 0.8em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-green);
+  margin: 0 0 0.5em;
+}
+
+.reveal .case-slide .kort h3:not(:first-child) {
+  margin-top: 1.1em;
+}
+
+.reveal .case-slide .kort p {
+  margin: 0 0 0.4em;
+}
+
+.reveal .case-trin {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.reveal .case-trin li {
+  margin: 0.35em 0;
+}
+
+.reveal .case-trin li.nyt {
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.reveal .case-trin .chip {
+  font-size: 0.75em;
+  margin: 0.3em 0 0;
+}
+
+.reveal .case-slide .kort--aflever {
+  display: flex;
+  flex-direction: column;
+  border-top: 8px solid var(--highlight);
+}
+
+.reveal .aflever__deadline {
+  margin-top: auto !important;
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+}
+
+.reveal .aflever__deadline strong {
+  display: block;
+  font-size: 2.2em;
+  letter-spacing: 0;
+  color: var(--highlight);
+}
+
+/* Formålsbadgen står i hjørnet ved titlen i stedet for at svæve */
+.reveal .badge.badge--inline {
+  position: static;
+  width: 190px;
+  height: 190px;
+  padding: 26px;
+  font-size: 0.38em;
+  flex-shrink: 0;
+}
+
+
+/* ---------- Enkel infoside: mobil + liste ---------- */
+.reveal .infoside-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.reveal .mobil {
+  margin: 0;
+  width: 290px;
+  border: 10px solid var(--flade-2);
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 0 0 14px rgba(128, 180, 191, 0.12), 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.reveal .mobil img {
+  display: block;
+  width: 100%;
+}
+
+.reveal .infoside-layout h2 {
+  font-size: 1.6em;
+}
+
+.reveal .infoside-trin {
+  font-size: 0.72em;
+}
+
+.reveal .infoside-trin li {
+  margin: 0.4em 0;
+}
+
+.reveal .infoside-chips {
+  margin: 0.9em 0 0.6em;
+}
+
+.reveal .infoside-chips code {
+  font-size: 0.95em;
+}
+
+
+/* ---------- Besøg: de studerende ---------- */
+.reveal .studerende figure {
+  margin: 0;
+  text-align: center;
+}
+
+.reveal .studerende .rund-billede {
+  margin-bottom: 24px;
+}
+
+.reveal .studerende h3 {
+  font-size: 1em;
+  margin-bottom: 0.2em;
+}
+
+.reveal .studerende p {
+  font-size: 0.55em;
+  margin: 0;
+}
+
+.reveal .studerende .chip {
+  margin: 0 0 0.6em;
+}
+
+/* Hjælpepunkter til de besøgende studerende */
+.reveal .hjaelpepunkter .kort {
+  position: relative;
+  border-top: 8px solid var(--farve);
+  padding: 28px 24px;
+}
+
+.reveal .hjaelpepunkter__nr {
+  display: grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background: var(--farve);
+  color: var(--baggrund);
+  font-size: 0.7em;
+  font-weight: 800;
+  margin-bottom: 0.7em;
+}
+
+.reveal .hjaelpepunkter h3 {
+  color: var(--farve);
+  font-size: 0.85em;
+  margin-bottom: 0.6em;
+}
+
+.reveal .hjaelpepunkter ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.62em;
+}
+
+.reveal .hjaelpepunkter li {
+  margin: 0.5em 0;
+  padding-left: 0.9em;
+  position: relative;
+}
+
+.reveal .hjaelpepunkter li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.35em;
+  height: 0.35em;
+  border-radius: 50%;
+  background: var(--farve);
+}
+
+
+/* ---------- Formålsbadge (fra den gamle case-slide) ---------- */
+.reveal .badge {
+  position: absolute;
+  right: 80px;
+  bottom: 64px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 36px;
+  box-sizing: border-box;
+  background: var(--jade-green);
+  font-size: 0.5em;
+  font-weight: 700;
+  line-height: 1.35;
+  transform: rotate(-8deg);
+}
+
+
+/* ---------- QR ---------- */
+.reveal .qr {
+  width: 260px;
+  height: 260px;
+  border-radius: 24px;
+}
+
+
+/* ---------- Reveal-kontroller ---------- */
+.reveal .controls {
+  color: var(--teal-green);
+}
+
+.reveal .progress {
+  color: var(--teal-green);
+  height: 4px;
+}
+
+.reveal .slide-number {
+  background: transparent;
+  color: var(--tekst-daempet);
+  font-family: var(--font);
+  font-size: 14px;
+}

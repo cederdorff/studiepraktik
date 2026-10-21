@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studiepraktik dag 2 – Multimediedesigner</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- reveal.js 5.1.0 (pinned) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <link rel="stylesheet" href="css/eaaa-tema.css">
+  <link rel="stylesheet" href="css/kode.css">
+</head>
+<body>
+<div class="reveal">
+<!-- Baggrundsvideo på forsiden: samme EAAA-video (Vimeo) som semesterstart-decket.
+     Fotoet på forsiden ligger bagved som fallback. Vises kun på første slide (js/main.js). -->
+<div class="cover-video" aria-hidden="true">
+  <iframe
+    src="https://player.vimeo.com/video/892590144?byline=0&amp;keyboard=0&amp;muted=1&amp;autoplay=1&amp;dnt=1&amp;loop=1&amp;background=1&amp;app_id=122963"
+    title=""
+    tabindex="-1"
+    allow="autoplay; fullscreen; picture-in-picture"></iframe>
+</div>
+<div class="slides">
+
+
+<!-- =====================================================
+     START
+     ===================================================== -->
+<section class="forside"
+  data-background-image="assets/images/eaaa-sonderhoej-7g.webp"
+  data-background-color="#0c1c20"
+  data-background-opacity="0.3">
+  <div class="deco">
+    <span class="cirkel cirkel--prikket" style="width: 660px; height: 660px; right: -230px; top: -170px;"></span>
+    <span class="cirkel cirkel--ring" style="width: 280px; height: 280px; right: 150px; bottom: -150px;"></span>
+    <span class="cirkel cirkel--prik" style="width: 20px; height: 20px; right: 398px; top: 128px;"></span>
+  </div>
+  <img class="logo" src="assets/logo-eaaa-hvid.png" alt="Erhvervsakademi Aarhus">
+  <div>
+    <p class="kicker">Multimediedesigner · Dag 2</p>
+    <h1><strong>Studie</strong>praktik</h1>
+    <p class="forside__lead">Kode, case og fremvisning, og en infoside, I selv har kodet</p>
+  </div>
+  <p class="forside__meta"><strong>RACE</strong> Torsdag 22. oktober 2026</p>
+  <aside class="notes">
+    Kl. 08.30. Byd velkommen, mens folk finder plads.
+  </aside>
+</section>
+
+
+
+<!-- =====================================================
+     1. VELKOMMEN TILBAGE (08.30–08.40)
+     ===================================================== -->
+<section>
+
+  <section class="divider">
+    <div class="deco">
+      <span class="cirkel cirkel--fuld" style="width: 520px; height: 520px; left: -220px; top: -330px;"></span>
+      <span class="cirkel cirkel--prikket" style="width: 300px; height: 300px; left: 260px; bottom: -170px;"></span>
+    </div>
+    <div class="divider__indhold" style="grid-template-columns: 0.62fr 1.6fr; gap: 48px;">
+      <div>
+        <p class="kicker" data-agenda-tid></p>
+        <h2><strong>Velkommen</strong> tilbage</h2>
+        <p class="undertitel">Dagens program</p>
+      </div>
+      <!-- Dagens program står kun her. js/main.js kopierer det ind i hver section-divider -->
+      <ol class="agenda" id="dagens-program" data-aktuel="velkommen">
+        <li data-sektion="velkommen" style="--sektion: var(--mellow-rose)"><span class="agenda__tid">08.30–08.40</span><span class="agenda__prik"></span><span class="agenda__titel">Velkommen tilbage og plan for dagen</span></li>
+        <li data-sektion="programmering" style="--sektion: var(--teal-green)"><span class="agenda__tid">08.40–09.45</span><span class="agenda__prik"></span><span class="agenda__titel">Programmering på MDU</span></li>
+        <li data-sektion="case" style="--sektion: var(--almond-buff)"><span class="agenda__tid">09.45–11.00</span><span class="agenda__prik"></span><span class="agenda__titel">Casearbejde (video og infoside)</span></li>
+        <li data-sektion="besoeg" style="--sektion: var(--moss)"><span class="agenda__tid">11.00–11.30</span><span class="agenda__prik"></span><span class="agenda__titel">Besøg af studerende fra 3. semester</span></li>
+        <li data-sektion="frokost" style="--sektion: var(--tofu)"><span class="agenda__tid">11.30–12.00</span><span class="agenda__prik"></span><span class="agenda__titel">Frokost</span></li>
+        <li data-sektion="ux" style="--sektion: var(--seafoam)"><span class="agenda__tid">12.00–13.00</span><span class="agenda__prik"></span><span class="agenda__titel">Introduktion til UX &amp; Content (Maria)</span></li>
+        <li data-sektion="arbejdstid" style="--sektion: var(--russet-orange)"><span class="agenda__tid">13.00–13.45</span><span class="agenda__prik"></span><span class="agenda__titel">Sidste arbejdstid på casen</span></li>
+        <li class="milepael" data-sektion="deadline" style="--sektion: var(--canary-yellow)"><span class="agenda__tid">13.45</span><span class="agenda__prik"></span><span class="agenda__titel">Deadline</span></li>
+        <li data-sektion="fremvisning" style="--sektion: var(--butter-yellow)"><span class="agenda__tid">13.45–14.00</span><span class="agenda__prik"></span><span class="agenda__titel">Fremvisning af videoer og infosider + afrunding</span></li>
+      </ol>
+    </div>
+    <aside class="notes">
+      Tid: 08.30–08.40 (10 min.). Dagens program på én gang: I dag slutter vi med, at I viser noget, I selv har lavet.
+      Derefter: opsamling på i går, status på videoen, det vi ikke nåede (job og hverdag) og spørgsmål.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner">
+      <div>
+        <p class="kicker">Opsamling</p>
+        <h2>Det nåede vi <strong>i går</strong></h2>
+        <ul class="punkter">
+          <li>Info om MDU: uddannelsen og opbygningen</li>
+          <li>Rundvisning på skolen</li>
+          <li>Design og logoer med Marlene</li>
+          <li>I gik i gang med jeres video</li>
+        </ul>
+      </div>
+      <img class="rund-billede" src="assets/images/klasselokale-gruppearbejde.webp"
+        alt="Et fyldt klasselokale, hvor studerende arbejder i grupper ved bordene">
+    </div>
+    <aside class="notes">
+      Tid: 08.31–08.32 (1 min.). Opsummér i går på 30 sekunder. Spørgsmål samler vi op på til sidst i velkomsten.
+      Overgang: »I gik i gang med videoen. Hvor langt er I nået?«
+    </aside>
+  </section>
+
+  <section>
+    <p class="kicker">Status på casen</p>
+    <h2>Hvor langt er I med <strong>videoen</strong>?</h2>
+    <div class="status-raekke">
+      <div class="status-trin" style="--farve: var(--mellow-rose);">
+        <div class="status-trin__cirkel">1</div>
+        <p>Målgruppe og budskab</p>
+      </div>
+      <div class="status-trin" style="--farve: var(--almond-buff);">
+        <div class="status-trin__cirkel">2</div>
+        <p>Storyboard</p>
+      </div>
+      <div class="status-trin" style="--farve: var(--seafoam);">
+        <div class="status-trin__cirkel">3</div>
+        <p>Optaget</p>
+      </div>
+      <div class="status-trin" style="--farve: var(--moss);">
+        <div class="status-trin__cirkel">4</div>
+        <p>Klippet</p>
+      </div>
+      <div class="status-trin" style="--farve: var(--canary-yellow);">
+        <div class="status-trin__cirkel">5</div>
+        <p>Infoside<small>i dag</small></p>
+      </div>
+    </div>
+    <p class="lille" style="margin-top: 1.4em;">Hver gruppe: Hvilket trin er I nået til, og hvad mangler I?</p>
+    <aside class="notes">
+      Tid: 08.32–08.33 (1–2 min.). Tjek ind: Gruppe for gruppe peger på det trin, de er nået til.
+      Én sætning pr. gruppe: Hvad mangler I?
+      Notér, hvem der er bagud. Dem skal du besøge først i arbejdstiden kl. 09.45.
+      Overgang: »Inden vi går videre: To ting nåede vi ikke i går. Hvad kan man blive, og hvordan ser hverdagen ud?«
+    </aside>
+  </section>
+
+  <section>
+    <p class="kicker">Det nåede vi ikke i går · Job</p>
+    <h2>Hvad kan man <strong>blive</strong>?</h2>
+    <div class="fire-kolonner">
+      <div class="kort job" style="--farve: var(--teal-green);">
+        <h3>Interactive design</h3>
+        <ul class="job__titler">
+          <li>Frontendudvikler</li>
+          <li>Webudvikler</li>
+          <li>Interaktionsdesigner</li>
+        </ul>
+        <span class="job__min">Her underviser jeg</span>
+      </div>
+      <div class="kort job" style="--farve: var(--seafoam);">
+        <h3>Experience design</h3>
+        <ul class="job__titler">
+          <li>UX-designer</li>
+          <li>Content creator</li>
+          <li>Social media specialist</li>
+        </ul>
+      </div>
+      <div class="kort job" style="--farve: var(--almond-buff);">
+        <h3>E-commerce</h3>
+        <ul class="job__titler">
+          <li>E-commerce-designer</li>
+          <li>UX-designer</li>
+          <li>Webudvikler</li>
+        </ul>
+      </div>
+      <div class="kort job" style="--farve: var(--mellow-rose);">
+        <h3>Game developer</h3>
+        <ul class="job__titler">
+          <li>Job i spilindustrien</li>
+          <li>2D, 3D og VR/AR</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lille" style="margin-top: 1em;">Også fx digital designer, applikationsudvikler, e-commerce-udvikler og digital konsulent · Kilde: eaaa.dk</p>
+    <aside class="notes">
+      Tid: 08.33–08.34 (1 min.). Det nåede vi ikke i går. Opdateret efter eaaa.dk: Man vælger speciale, og hvert speciale peger mod sine jobs.
+      Interactive design (IxD) er min linje: frontend, web og interaktion, med JavaScript og React.
+      Experience design: oplevelser, content og UX. E-commerce: webshops og shoppingoplevelser (studiestart i januar).
+      Game developer: spil i 2D, 3D og VR/AR fra dag 1.
+      Multimediedesignere ansættes typisk i små og mellemstore virksomheder og på digitale bureauer.
+    </aside>
+  </section>
+
+  <section>
+    <p class="kicker">Det nåede vi ikke i går · Job</p>
+    <h2>Tæt på <strong>erhvervslivet</strong></h2>
+    <div class="to-kolonner" style="grid-template-columns: 1fr 1.15fr; align-items: start;">
+      <div class="tal-raekke">
+        <div class="tal-kort tal-kort--venstre"><span class="tal">10 uger</span><p>praktik på 4. semester, i Danmark eller i udlandet</p></div>
+        <div class="tal-kort tal-kort--venstre"><span class="tal">2 år</span><p>så er du klar til job</p></div>
+      </div>
+      <div>
+        <h3>Eksempler på praktikvirksomheder</h3>
+        <div class="virksomheder">
+          <span>Bestseller</span><span>Grundfos</span><span>Salling Group</span><span>Novicell</span>
+          <span>Dentsu</span><span>Knowit</span><span>TrueStory</span><span>SearchMind</span>
+          <span>Boligportal</span><span>Generaxion</span><span>Brand By Hand</span><span>Aveo</span>
+        </div>
+        <p class="lille" style="margin-top: 0.8em;">Efter praktikken: et afsluttende eksamensprojekt, ofte sammen med en virksomhed · Kilde: eaaa.dk</p>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 08.34–08.35 (1 min.). Praktikken er 10 uger på 4. semester, og man finder selv sin praktikplads, med hjælp fra karrierecentret.
+      Mange får job samme sted, hvor de var i praktik. Projekterne på uddannelsen laves også ofte med rigtige virksomheder.
+    </aside>
+  </section>
+
+  <section>
+    <p class="kicker">Det nåede vi ikke i går · Hverdagen</p>
+    <h2>En uge på <strong>MDU</strong></h2>
+    <div class="uge" style="grid-template-rows: auto repeat(3, 64px);">
+      <span></span>
+      <span class="uge__dag">Mandag</span>
+      <span class="uge__dag">Tirsdag</span>
+      <span class="uge__dag">Onsdag</span>
+      <span class="uge__dag">Torsdag</span>
+      <span class="uge__dag">Fredag</span>
+      <span class="uge__tid" style="grid-row: 2;">08.30–10.00</span>
+      <span class="uge__tid" style="grid-row: 3;">10.30–12.00</span>
+      <span class="uge__tid" style="grid-row: 4;">12.30–14.00</span>
+      <span class="uge__blok uge__blok--selv" style="grid-column: 2; grid-row: 2 / span 3; display: grid; place-items: center;">Selvstudie</span>
+      <span class="uge__blok" style="--farve: var(--seafoam); grid-column: 3; grid-row: 2 / span 3; display: grid; place-items: center;">UX &amp; Content</span>
+      <span class="uge__blok" style="--farve: var(--mellow-rose); grid-column: 4; grid-row: 2 / span 3; display: grid; place-items: center;">Design</span>
+      <span class="uge__blok" style="--farve: var(--teal-green); grid-column: 5; grid-row: 2 / span 3; display: grid; place-items: center;">Programmering</span>
+      <span class="uge__blok" style="--farve: var(--canary-yellow); grid-column: 6; grid-row: 2 / span 3; display: grid; place-items: center;">Projekt-kick-off</span>
+    </div>
+    <div class="tre-kolonner" style="margin-top: 28px;">
+      <div class="tal-kort"><span class="tal">24</span><p>undervisningstimer om ugen (ca.)</p></div>
+      <div class="tal-kort"><span class="tal">37–40</span><p>timer i alt med forberedelse og projekter (ca.)</p></div>
+      <div class="tal-kort"><span class="tal">22</span><p>år i gennemsnit</p></div>
+    </div>
+    <aside class="notes">
+      Tid: 08.35 (1 min.). Eksempel fra et rigtigt skema på 1. semester (uge 37).
+      Undervisningsdage og projektdage veksler. Et fuldtidsstudie: ca. 24 undervisningstimer om ugen,
+      og med forberedelse og projekter er det ca. 37–40 timer i alt.
+      Medstuderende: gennemsnitsalder 22 år, ca. 60 % kvinder og 40 % mænd.
+    </aside>
+  </section>
+
+  <section>
+    <p class="kicker">Det nåede vi ikke i går · Hverdagen</p>
+    <h2>Rigtige <strong>skemaer</strong></h2>
+    <div class="skemaer">
+      <figure>
+        <figcaption>Starten af uddannelsen: fag og første sprint</figcaption>
+        <img src="assets/images/skema-uge-37.webp" alt="Skema for uge 37: selvstudie mandag, UX og content tirsdag, design onsdag, programmering torsdag og sprint-kick-off fredag, kl. 08.30–14.00">
+      </figure>
+      <figure>
+        <figcaption>Senere: CV, portfolio og Company Day</figcaption>
+        <img src="assets/images/skema-uge-39.webp" alt="Skema for uge 39 med CV-workshops, portfolio, Company Day onsdag og ansøgningsworkshops torsdag">
+      </figure>
+    </div>
+    <aside class="notes">
+      Tid: 08.36 (1 min.). To rigtige uger fra skemaet. Øverst: starten med fag som UX &amp; Content, design og programmering,
+      en selvstudiedag og sprint-kick-off. Nederst: senere med CV-workshops, portfolio, Company Day og ansøgningsworkshops.
+      I ugerne lige efter kører et webapp-projekt, hvor jeg underviser.
+      Pointe: Undervisningsdage og projektdage veksler, og det bliver mere projekt og erhvervsliv, jo længere man kommer.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner">
+      <div>
+        <p class="kicker">Det nåede vi ikke i går · Hverdagen</p>
+        <h2>Mere end <strong>undervisning</strong></h2>
+        <ul class="punkter">
+          <li>Gruppearbejde og hands-on</li>
+          <li>Cases fra den virkelige verden</li>
+          <li>Fredagsbar, padel og O-løb</li>
+          <li>Workshops om det første job</li>
+        </ul>
+      </div>
+      <img class="rund-billede" src="assets/images/studerende-samtale-atrium.webp"
+        alt="Studerende sidder og snakker ved et bord i et lyst, åbent studiemiljø på Erhvervsakademi Aarhus">
+    </div>
+    <aside class="notes">
+      Tid: 08.37 (1 min.). Studiemiljøet: Meget af læringen sker i grupper, og det sociale miljø støtter læringen.
+      Man forventes at tage ansvar for sin egen læring. Arrangementerne (fredagsbar, padel, O-løb, workshops) er fra eaaa.dk.
+      Overgang: »Men hvordan føles det egentlig? Her er en dag med Yessica.«
+    </aside>
+  </section>
+  <section class="video-slide">
+    <p class="kicker" style="align-self: flex-start;">Det nåede vi ikke i går · Hverdagen</p>
+    <h2>Hverdagen på <strong>MDU</strong></h2>
+    <div class="video-ramme">
+      <iframe data-src="https://www.youtube-nocookie.com/embed/ykMRDerQ5XA?rel=0"
+        title="Video: Følg Yessica, når hun selvfilmer en dag på studiet"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+    </div>
+    <p class="lille">Følg Yessica, når hun selvfilmer en dag på studiet · <a href="https://www.youtube.com/watch?v=ykMRDerQ5XA">Se den på YouTube</a></p>
+    <aside class="notes">
+      Tid: 08.37–08.39 (2 min.). Videoen viser hverdagen for en studerende. Tjek længden før dagen, og vis evt. kun et udsnit,
+      så velkomsten holder sig til 10 min.
+      Videoen indlæses først, når sliden er tæt på, og stopper, når du går videre.
+      Kør decket via en lokal server (python3 -m http.server). YouTube afviser indlejring fra en fil åbnet direkte.
+    </aside>
+  </section>
+
+  <section class="centreret">
+    <div class="deco">
+      <span class="cirkel cirkel--prikket" style="width: 640px; height: 640px; left: 320px; top: 40px;"></span>
+      <span class="cirkel cirkel--prik" style="width: 22px; height: 22px; left: 880px; top: 120px;"></span>
+    </div>
+    <p class="kicker">Inden vi går i gang</p>
+    <h2 style="font-size: 3.2em;"><strong>Spørgsmål</strong>?</h2>
+    <p class="stor">Til i går, til uddannelsen eller til dagen i dag</p>
+    <aside class="notes">
+      Tid: 08.39–08.40 (1–2 min.). Giv plads. Hvis det er stille: »Hvad overraskede jer mest ved videoen?«
+      eller »Hvilket job lød mest som jer?«
+      Overgang: »Så skal vi kode. Først: Hvorfor skal en multimediedesigner overhovedet kunne programmere?«
+    </aside>
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     2. PROGRAMMERING PÅ MDU (08.40–09.45)
+     ===================================================== -->
+<section>
+
+  <section class="divider">
+    <div class="deco">
+      <span class="cirkel cirkel--prikket" style="width: 520px; height: 520px; left: -200px; bottom: -330px;"></span>
+      <span class="cirkel cirkel--fuld" style="width: 240px; height: 240px; left: 380px; bottom: -150px;"></span>
+    </div>
+    <div class="divider__indhold">
+      <div>
+        <p class="kicker" data-agenda-tid></p>
+        <h2><strong>Programmering</strong> på MDU</h2>
+        <p class="undertitel">»Alle kan lære at programmere«</p>
+      </div>
+      <ol class="agenda agenda--mini" data-mini-agenda="programmering"></ol>
+    </div>
+    <aside class="notes">
+      Tid: 08.40. Plan for de næste 65 min.:
+      ca. 25 min. fortælling, ca. 30 min. kode og CodeSandbox, ca. 10 min. overgang til casen.
+      Gentag citatet fra i går: Alle kan lære at programmere. I får beviset om en halv time.
+    </aside>
+  </section>
+
+  <!-- ---------- Fortælling (ca. 25 min.) ---------- -->
+
+  <section>
+    <div class="to-kolonner">
+      <div>
+        <h2><strong>Kode</strong> er et designmateriale</h2>
+        <ul class="punkter">
+          <li>Du designer bedre, når du ved, hvad der kan lade sig gøre</li>
+          <li>Du kan afprøve dine idéer med det samme</li>
+          <li>Du taler samme sprog som udviklerne</li>
+        </ul>
+      </div>
+      <img class="rund-billede" src="assets/images/kode-paa-laptop.webp"
+        alt="Hænder på tastaturet af en bærbar computer med kode på skærmen">
+    </div>
+    <aside class="notes">
+      Tid: 08.41–08.44 (3 min.).
+      Spørgsmål til salen: Hvorfor skal en designer kunne kode?
+      Billede: En møbeldesigner kender træet. En multimediedesigner kender koden.
+      Man behøver ikke være den bedste programmør. Man skal bare kende materialet godt nok til at designe med det.
+      Overgang: »Og koden er overalt, også i jeres browser lige nu.«
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 1fr 1.3fr;">
+      <div>
+        <h2>Alt, browseren viser, er <strong>kode</strong></h2>
+        <p class="stor">HTML, CSS og JavaScript</p>
+        <p class="lille">Prøv selv: højreklik på en side → <strong>Inspicér</strong></p>
+      </div>
+      <img class="browser-billede" src="assets/images/devtools-google.webp"
+        alt="Google.com åbnet i browseren med udviklerværktøjerne ved siden af, der viser sidens HTML-kode">
+    </div>
+    <aside class="notes">
+      Tid: 08.44–08.46. Selv Googles meget enkle forside er en masse HTML, CSS og JavaScript.
+      Vis gerne live: højreklik på søgefeltet og vælg Inspicér.
+    </aside>
+  </section>
+
+  <section class="skaermbillede">
+    <img class="browser-billede" src="assets/images/devtools-eaaa.webp"
+      alt="Eaaa.dk åbnet i browseren med udviklerværktøjerne ved siden af, der viser sidens HTML og CSS">
+    <p class="lille">eaaa.dk</p>
+    <aside class="notes">
+      Tid: 08.46–08.48. LIVE: Åbn eaaa.dk, Inspicér overskriften, og ret teksten i Elements-panelet,
+      fx til »Studiepraktik er det bedste«.
+      Pointe: I har lige »hacket« eaaa.dk, men kun på jeres egen skærm.
+    </aside>
+  </section>
+
+  <section class="skaermbillede">
+    <img class="browser-billede" src="assets/images/devtools-instagram.webp"
+      alt="En Instagram-profil vist i mobilvisning i browseren med udviklerværktøjerne åbne, der viser de data, siden henter">
+    <p class="lille">instagram.com · i mobilvisning</p>
+    <aside class="notes">
+      Tid: 08.48–08.50. Instagram er også bare en webside. Her i mobilvisning (mobil-ikonet i DevTools).
+      Til højre: de data, siden henter fra serveren. Det kommer vi tilbage til med API’er.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Fra <strong>side</strong> til <strong>produkt</strong></h2>
+    <div class="produkt-vej">
+      <div class="produkt-vej__trin" style="--farve: var(--seafoam);">
+        <div class="produkt-vej__cirkel">HTML, CSS &amp; JS</div>
+        <p>Siden og det, der sker, når man klikker</p>
+      </div>
+      <div class="produkt-vej__trin" style="--farve: var(--teal-green);">
+        <div class="produkt-vej__cirkel">React</div>
+        <p>Byg med komponenter, der kan genbruges</p>
+      </div>
+      <div class="produkt-vej__trin" style="--farve: var(--moss);">
+        <div class="produkt-vej__cirkel">API’er</div>
+        <p>Hent data udefra, fx vejr, film eller kort</p>
+      </div>
+      <div class="produkt-vej__trin" style="--farve: var(--almond-buff);">
+        <div class="produkt-vej__cirkel">Supabase</div>
+        <p>Jeres egen database og login</p>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 08.50–08.53 (3 min.). Det er rejsen på IxD-linjen.
+      1) Vi starter med HTML, CSS og JavaScript, præcis det, I prøver om lidt.
+      2) React: Vi bygger brugerflader af små genbrugelige klodser (komponenter), fx et kort eller en knap.
+      3) API’er: Appen spørger en server om data og får svar (request og response). Sådan virker Instagram-feeds og vejrapps.
+      4) Supabase: Så kan de studerende have deres egen database og login, og så er det et rigtigt produkt.
+      Næste slide: tre eksempler.
+    </aside>
+  </section>
+
+  <section>
+    <h2><strong>Værktøjs</strong>kassen</h2>
+    <div class="vaerktoejer">
+      <div class="kort" style="--farve: var(--mellow-rose);">
+        <h3>Design</h3>
+        <p>Figma · Adobe Creative Cloud</p>
+      </div>
+      <div class="kort" style="--farve: var(--teal-green);">
+        <h3>Kode</h3>
+        <p>HTML · CSS · JavaScript · React · Next.js · VS Code · Git og GitHub</p>
+      </div>
+      <div class="kort" style="--farve: var(--moss);">
+        <h3>Data og login</h3>
+        <p>API’er · Supabase · Firebase</p>
+      </div>
+      <div class="kort" style="--farve: var(--almond-buff);">
+        <h3>Website og webshop</h3>
+        <p>WordPress · Shopify</p>
+      </div>
+      <div class="kort" style="--farve: var(--seafoam);">
+        <h3>Spil</h3>
+        <p>Unity · C#</p>
+      </div>
+      <div class="kort" style="--farve: var(--canary-yellow);">
+        <h3>AI</h3>
+        <p>ChatGPT · Claude · GitHub Copilot · Figma Make</p>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 08.55–08.56 (1 min.). Det er ikke alle værktøjer for alle. Det afhænger af speciale:
+      React og Next.js fylder på Interactive design, WordPress og Shopify på Experience design og E-commerce,
+      Unity og C# på Game developer. Figma, HTML, CSS, JavaScript og GitHub bruger alle fra 1. semester.
+      AI-værktøjerne er fra gårsdagens slide om AI i værktøjskassen.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Det <strong>bygger</strong> vi</h2>
+    <div class="tre-kolonner">
+      <figure class="app">
+        <img src="assets/images/movie-app.webp" alt="Movie App med søgefelt, filtre og kort med filmplakater for Barbie, Dune og flere film">
+        <h3>Movie App</h3>
+        <p>JavaScript og data: søgning, genre og sortering</p>
+        <p><a href="https://cederdorff.com/js-movie-app/">cederdorff.com/js-movie-app</a></p>
+      </figure>
+      <figure class="app">
+        <img src="assets/images/post-app.webp" alt="Post App med overskriften »Explore the latest posts« og et gitter af opslag med fotos fra Aarhus">
+        <h3>Post App</h3>
+        <p>React og Supabase: opslag gemt i en database</p>
+        <p><a href="https://cederdorff.com/post-app-supabase/">cederdorff.com/post-app-supabase</a></p>
+      </figure>
+      <figure class="app">
+        <img src="assets/images/mellemrum-app.webp" alt="Websitet Mellemrum med overskriften »Find plads til noget nyt«, et foto fra taget af ARoS og en liste over kommende events">
+        <h3>Mellemrum</h3>
+        <p>React og Supabase, bygget af komponenter</p>
+        <p><a href="https://cederdorff.com/mellemrum/">cederdorff.com/mellemrum</a></p>
+      </figure>
+    </div>
+    <aside class="notes">
+      Tid: 08.56–08.59 (3 min.). Vis 1–2 af dem live.
+      Movie App: ren JavaScript, der henter film og lader dig søge, filtrere og sortere.
+      Post App: React og Supabase. Opslagene gemmes i en rigtig database.
+      Mellemrum: React Router og Supabase. Siden er bygget af komponenter som Navbar, Hero og EventCard.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 1fr 1.1fr;">
+      <div>
+        <p class="kicker">Kode × design × UX</p>
+        <h2>Kode sætter <strong>strøm</strong> til designet</h2>
+        <p>Et design i Figma ser færdigt ud. Først med kode virker det rigtigt: knapper, data, login.</p>
+      </div>
+      <div class="venn">
+        <div class="venn__cirkel venn__cirkel--design" style="--farve: var(--mellow-rose);">
+          <strong>Design</strong><span>Hvordan ser det ud?</span>
+        </div>
+        <div class="venn__cirkel venn__cirkel--ux" style="--farve: var(--seafoam);">
+          <strong>UX</strong><span>Giver det mening for brugeren?</span>
+        </div>
+        <div class="venn__cirkel venn__cirkel--kode" style="--farve: var(--teal-green);">
+          <strong>Kode</strong><span>Får det til at virke</span>
+        </div>
+        <div class="venn__midte">Et produkt, man kan bruge</div>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 08.59–09.01 (2 min.).
+      Pointe: Design og UX beskriver, hvordan noget skal se ud og opføre sig. Koden er strømmen, der får det til at virke.
+      Eksempel: en login-side. I Figma kan den se helt færdig ud, men intet sker, når man trykker.
+      Med kode bliver man faktisk logget ind, data bliver gemt, og siden virker på alle skærme.
+      Derfor lærer multimediedesignere at kode: så de selv kan sætte strøm til deres designs.
+      Maria tager UX- og content-delen i eftermiddag.
+    </aside>
+  </section>
+
+  <section>
+    <div class="deco">
+      <span class="cirkel cirkel--prikket" style="width: 420px; height: 420px; right: -100px; bottom: -120px;"></span>
+    </div>
+    <h2>AI har ændret, hvordan vi <strong>koder</strong></h2>
+    <ul class="punkter" style="max-width: 900px;">
+      <li>AI kan skrive kode på få sekunder</li>
+      <li>Men du skal stadig vide, hvad du vil bygge og hvorfor</li>
+      <li>Vi lærer at læse, teste og rette koden</li>
+      <li><span class="fremhaev">Det vigtigste: at kunne forklare den</span></li>
+    </ul>
+    <aside class="notes">
+      Tid: 09.01–09.04 (3 min.).
+      Byg videre på i går (»Brug AI som makker, du har ansvaret«). Gentag det ikke, men gør det konkret for kode.
+      Fortæl, hvordan undervisningen har ændret sig: mindre udenadslære af syntaks, mere fokus på at forstå,
+      vurdere og forklare kode. Vi bruger AI til at forklare fejl, foreslå løsninger og lære hurtigere.
+      I dag må I gerne bruge AI til infosiden, men I skal kunne forklare, hvad koden gør.
+    </aside>
+  </section>
+
+
+
+  <!-- ---------- Kode og CodeSandbox (ca. 30 min.) ---------- -->
+
+  <section>
+    <h2>Tre sprog, <strong>tre job</strong></h2>
+    <div class="tre-kolonner" style="margin-top: 12px;">
+      <div class="sprog" style="--farve: var(--mellow-rose);">
+        <div class="sprog__cirkel">HTML</div>
+        <h3>er <strong>indholdet</strong></h3>
+        <p>Skelettet: overskrifter, tekst, knapper</p>
+      </div>
+      <div class="sprog" style="--farve: var(--seafoam);">
+        <div class="sprog__cirkel">CSS</div>
+        <h3>er <strong>udseendet</strong></h3>
+        <p>Tøjet: farver, skrift, former</p>
+      </div>
+      <div class="sprog" style="--farve: var(--canary-yellow);">
+        <div class="sprog__cirkel">JS</div>
+        <h3>er <strong>opførslen</strong></h3>
+        <p>Musklerne: det, der sker, når man klikker</p>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 09.04–09.06 (2 min.).
+      Kroppen som billede: HTML er skelettet, CSS er tøjet og JavaScript er musklerne og nervesystemet.
+      Nu bygger vi en mini-infoside i tre trin, præcis den slags, I selv skal lave.
+    </aside>
+  </section>
+
+  <section class="skaermbillede">
+    <h2 style="align-self: flex-start;">Lag på <strong>lag</strong></h2>
+    <img class="browser-billede" src="assets/images/html-css-js-lag.webp"
+      alt="Tre paneler: Med kun HTML ses en tom kasse med to cirkler. Med HTML og CSS bliver det et tegnet ansigt. Med HTML, CSS og JavaScript kan ansigtet styres med knapper"
+      style="max-height: 460px;">
+    <p class="lille">Prøv selv: <a href="https://html-css-js.com">html-css-js.com</a></p>
+    <aside class="notes">
+      Tid: 1 min. Fra den gamle Keynote. Åbn html-css-js.com live, og klik »Click here to PLAY!«.
+      Pointe: Det er de samme tre lag, I lige har hørt om. HTML er bare en kasse, CSS gør det til et ansigt,
+      og JavaScript gør, at man kan lege med det. Nu kigger vi på, hvordan man læser koden.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Sådan læser du <strong>koden</strong></h2>
+    <div class="tre-kolonner anatomi">
+      <div class="kort" style="--farve: var(--mellow-rose);">
+        <h3>HTML</h3>
+        <code class="anatomi__kode"><span class="a1">&lt;h1&gt;</span><span class="a2">Hej</span><span class="a3">&lt;/h1&gt;</span></code>
+        <ul class="anatomi__forklaring">
+          <li class="a1">Starttag</li>
+          <li class="a2">Indholdet</li>
+          <li class="a3">Sluttag</li>
+        </ul>
+      </div>
+      <div class="kort" style="--farve: var(--seafoam);">
+        <h3>CSS</h3>
+        <code class="anatomi__kode"><span class="a1">h1</span> { <span class="a2">color</span>: <span class="a3">red</span>; }</code>
+        <ul class="anatomi__forklaring">
+          <li class="a1">Hvad skal styles?</li>
+          <li class="a2">Egenskaben</li>
+          <li class="a3">Værdien</li>
+        </ul>
+      </div>
+      <div class="kort" style="--farve: var(--canary-yellow);">
+        <h3>JavaScript</h3>
+        <code class="anatomi__kode"><span class="a1">knap</span>.addEventListener(<span class="a2">"click"</span>, <span class="a3">visFakta</span>)</code>
+        <ul class="anatomi__forklaring">
+          <li class="a1">Hvem? Knappen</li>
+          <li class="a2">Hvornår? Ved klik</li>
+          <li class="a3">Hvad? Vis et fact</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 09.06–09.08 (2 min.). Tre mønstre, der går igen i al koden, I ser i dag.
+      HTML: Tags kommer i par, og indholdet står imellem. CSS: Først hvad, så egenskab og værdi.
+      JavaScript: hvem, hvornår og hvad. Når I kan læse de tre, kan I læse de næste tre slides.
+    </aside>
+  </section>
+
+  <section class="kode-slide" id="trin-1">
+    <p class="kicker">Trin 1 · HTML</p>
+    <h2><strong>HTML</strong> er indholdet</h2>
+    <div class="kode-og-resultat">
+      <div class="kode-kolonne">
+        <pre><code class="language-html" data-trim data-line-numbers="1-2,14|3-7|8-13|9-10|11-12">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="da"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Et glimt af MDU&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Et glimt af MDU&lt;/h1&gt;
+  &lt;p&gt;Vi designer og koder digitale oplevelser.&lt;/p&gt;
+  &lt;button&gt;Vis et fun fact&lt;/button&gt;
+  &lt;p id="fakta"&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+        <p class="lille">Fil: <code>index.html</code></p>
+      </div>
+      <figure class="resultat">
+        <figcaption>Resultat</figcaption>
+        <img src="assets/images/demo-trin-1.webp" alt="En side med overskriften »Et glimt af MDU«, en linje tekst og en grå standardknap på hvid baggrund">
+      </figure>
+    </div>
+    <aside class="notes">
+      Tid: 09.08–09.13 (5 min.). Gå gennem fremhævningerne med højre pil:
+      1) Linje 1–2 og 14: »Det her er en HTML-side, og den er på dansk.« Alt ligger inde i html-tagget.
+      2) head: info til browseren, som ikke står på selve siden, fx titlen i fanen.
+      3) body: alt det, man kan se.
+      4) h1 og p: en overskrift og et afsnit. Tags kommer i par: start og slut.
+      5) button og en tom p med id="fakta". Her skal vores fun fact stå senere.
+      Pointe ved resultatet: Det virker, men det er grimt. Times New Roman på hvid baggrund, og knappen gør ingenting.
+      Overgang: »Lad os give det noget tøj på.«
+    </aside>
+  </section>
+
+  <section class="kode-slide" id="trin-2">
+    <p class="kicker">Trin 2 · CSS</p>
+    <h2><strong>CSS</strong> er udseendet</h2>
+    <div class="kode-og-resultat">
+      <div class="kode-kolonne">
+        <pre><code class="language-css" data-trim data-line-numbers="1-7|9|11-17">
+body {
+  background: #0c1c20;
+  color: #f3f4f7;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 { color: #80b4bf; }
+
+button {
+  background: #80b4bf;
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+}
+        </code></pre>
+        <p class="lille">Fil: <code>style.css</code> · kobles på i <code>&lt;head&gt;</code> med <code>&lt;link rel="stylesheet" href="style.css"&gt;</code></p>
+      </div>
+      <figure class="resultat">
+        <figcaption>Resultat</figcaption>
+        <img src="assets/images/demo-trin-2.webp" alt="Samme side med mørk baggrund, centreret tekst, farvet overskrift og en rund knap">
+      </figure>
+    </div>
+    <aside class="notes">
+      Tid: 09.13–09.18 (5 min.).
+      Først: CSS ligger i sin egen fil, style.css, og kobles på med én linje i head.
+      1) body: baggrund, tekstfarve, skrift, centrering og luft. Farverne er skrevet som farvekoder, fx #0c1c20.
+      2) h1 får en lyseblå farve.
+      3) button: samme farve, ingen kant, helt runde hjørner og lidt luft. Nu ligner det en rigtig knap.
+      Spørg: Hvilken farve skal knappen have? Skift farvekoden, og vis forskellen.
+      Overgang: »Den ser god ud, men den gør stadig ingenting. Nu sætter vi strøm til.«
+    </aside>
+  </section>
+
+  <section class="kode-slide" id="trin-3">
+    <p class="kicker">Trin 3 · JavaScript</p>
+    <h2><strong>JavaScript</strong> er opførslen</h2>
+    <div class="kode-og-resultat">
+      <div class="kode-kolonne">
+        <pre><code class="language-javascript" data-trim data-line-numbers="1-6|8-10|12-16|14-15">
+// 1. En liste med fun facts
+const fakta = [
+  "MDU tager 2 år – med praktik i en rigtig virksomhed.",
+  "Du lærer både design, UX, content og kode.",
+  "Du arbejder i projekter sammen med andre."
+];
+
+// 2. Find knappen og tekstfeltet på siden
+const knap = document.querySelector("button");
+const tekst = document.querySelector("#fakta");
+
+// 3. Når der klikkes: vis et tilfældigt fact
+knap.addEventListener("click", function () {
+  const nr = Math.floor(Math.random() * fakta.length);
+  tekst.textContent = fakta[nr];
+});
+        </code></pre>
+        <p class="lille">Fil: <code>script.js</code> · kobles på lige før <code>&lt;/body&gt;</code> med <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></p>
+      </div>
+      <figure class="resultat">
+        <figcaption>Resultat efter klik</figcaption>
+        <img src="assets/images/demo-trin-3.webp" alt="Samme side, hvor knappen har vist et fun fact om MDU under sig">
+      </figure>
+    </div>
+    <aside class="notes">
+      Tid: 09.18–09.23 (5 min.).
+      JavaScript ligger i script.js og kobles på nederst i body.
+      1) En liste (et array) med tekster. Hver tekst i anførselstegn, og komma imellem.
+      2) Vi finder knappen og den tomme p på siden. Det er sådan, JS »får fat i« HTML.
+      3) addEventListener: »Når nogen klikker, så gør det her.«
+      4) Vælg et tilfældigt nummer, og skriv teksten ind på siden.
+      Pointe: Det er en rigtig, interaktiv side. Og det er præcis den kode, der ligger i jeres starter.
+      Overgang: »Nu prøver I selv, i CodeSandbox.«
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 0.9fr 1.3fr;">
+      <div>
+        <h2>Prøv selv i <strong>CodeSandbox</strong></h2>
+        <ol class="trin">
+          <li><span>Gå til <a href="https://codesandbox.io/">codesandbox.io</a></span></li>
+          <li><span>Log ind, fx med Google</span></li>
+          <li><span>Kode til venstre, resultat til højre</span></li>
+        </ol>
+      </div>
+      <img class="browser-billede" src="assets/images/codesandbox-javascript-knap.webp"
+        alt="CodeSandbox med HTML og JavaScript til venstre og den færdige side med en knap til højre">
+    </div>
+    <aside class="notes">
+      Tid: 09.23–09.25 (2 min.). Intet at installere. Alt kører i browseren.
+      Få alle til at logge ind nu, så det er klaret, før casen starter.
+    </aside>
+  </section>
+
+  <section>
+    <h2>1 · <strong>HTML</strong> og CSS</h2>
+    <ol class="trin">
+      <li><span>Åbn starterprojektet<small><a href="https://codesandbox.io/s/html-css-javascript-starter-whlnu">codesandbox.io/s/html-css-javascript-starter-whlnu</a></small></span></li>
+      <li><span>Tilføj et afsnit med <code>&lt;p&gt;</code></span></li>
+      <li><span>Centrér det hele, og skift farve og skriftstørrelse i CSS</span></li>
+      <li><span>Tilføj et billede med <code>&lt;img&gt;</code>, og sæt bredden</span></li>
+    </ol>
+    <p class="lille" style="margin-top: 1em;">Løsning: <a href="https://codesandbox.io/s/html-css-javascript-9nypo">codesandbox.io/s/html-css-javascript-9nypo</a></p>
+    <aside class="notes">
+      Tid: 09.25–09.31 (6 min.). Kod med på storskærmen, mens de prøver selv.
+      Tip: text-align: center på body centrerer alt. Billeder: src og width.
+      Tjek før dagen, at starter- og løsningslinket stadig virker.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 0.9fr 1.3fr; gap: 48px;">
+      <div>
+        <h2>2 · <strong>JavaScript</strong></h2>
+        <ul class="punkter" style="font-size: 0.8em;">
+          <li>Klik på »Try me«. Hvad sker der?</li>
+          <li>Skift farven fra <code>"red"</code> til en anden</li>
+          <li>Skift teksten i overskriften</li>
+        </ul>
+        <p class="lille"><a href="https://codesandbox.io/s/javascript-starter-brg12">codesandbox.io/s/javascript-starter-brg12</a></p>
+      </div>
+      <img class="browser-billede" src="assets/images/codesandbox-javascript-knap.webp"
+        alt="CodeSandbox med HTML og JavaScript til venstre og en side med overskrift og knappen »Try me« til højre">
+    </div>
+    <aside class="notes">
+      Tid: 09.31–09.35 (4 min.).
+      Funktionen changeMyWebsite ændrer baggrundsfarve, tekstfarve og overskrift og viser en alert.
+      Den kører, fordi addEventListener lytter efter klik på knappen.
+      Tjek før dagen, at sandboxen stadig virker.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 0.9fr 1.3fr; gap: 48px;">
+      <div>
+        <h2>3 · <strong>Input</strong></h2>
+        <ul class="punkter" style="font-size: 0.8em;">
+          <li>Skriv dit navn, og klik</li>
+          <li>Find linjen, der sætter navnet ind på siden</li>
+          <li>Skriv noget andet foran navnet</li>
+        </ul>
+        <p class="lille"><a href="https://codesandbox.io/s/javascript-input-okm7e">codesandbox.io/s/javascript-input-okm7e</a></p>
+      </div>
+      <img class="browser-billede" src="assets/images/codesandbox-javascript-input.webp"
+        alt="CodeSandbox med et tekstfelt og en knap, hvor det indtastede navn er skrevet ind på siden under feltet">
+    </div>
+    <aside class="notes">
+      Tid: 09.35–09.37 (2 min., spring over, hvis tiden er knap).
+      displayName henter værdien fra input-feltet og sætter den ind i section#content.
+      Tjek før dagen, at sandboxen stadig virker.
+    </aside>
+  </section>
+
+  <!-- ---------- Overgang til casen (ca. 10 min.) ---------- -->
+
+  <section>
+    <h2>Jeres <strong>starter</strong> i CodeSandbox</h2>
+    <ol class="trin">
+      <li><span>Åbn starteren<small><span class="pladsholder-tekst">[LINK: CodeSandbox med infoside-starter]</span></small></span></li>
+      <li><span>Tryk <strong>Fork</strong>, så får gruppen sin egen kopi</span></li>
+      <li><span>Ret i <code>index.html</code>, <code>style.css</code> og <code>script.js</code><small>Preview til højre opdaterer, når I gemmer</small></span></li>
+      <li><span>Del linket til jeres sandbox i gruppen</span></li>
+    </ol>
+    <aside class="notes">
+      Tid: 09.37–09.40 (3 min.). Åbn starteren, og vis den: budskab, video, fun fact-knap og tema-knap.
+      Kun én i gruppen behøver at forke. Resten kan følge med via linket.
+      Videoen: Upload til YouTube (skjult), TikTok eller Instagram, og indsæt linket. Det står i README i sandboxen.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 0.85fr 1.3fr;">
+      <div>
+        <h2>Det er der i <strong>starteren</strong></h2>
+        <p class="lille">Siden virker allerede. I skal bare gøre den til jeres egen.</p>
+      </div>
+      <ul class="filtrae">
+        <li class="mappe"><span>infoside-starter/</span></li>
+        <li><span>index.html</span><span>Indholdet: budskab, video, tekst og navne</span></li>
+        <li><span>style.css</span><span>Udseendet: farverne står øverst</span></li>
+        <li><span>script.js</span><span>Opførslen: fun fact- og tema-knap</span></li>
+        <li><span>README.md</span><span>Sådan arbejder I i sandboxen</span></li>
+      </ul>
+    </div>
+    <aside class="notes">
+      Tid: 09.40–09.42 (2 min.). Vis kommentarerne, fx »Skriv jeres budskab her« og »Indsæt link til jeres video her«.
+      Vis farvevariablerne øverst i style.css, og skift én farve live.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner">
+      <div>
+        <h2>Når I <strong>sidder fast</strong></h2>
+        <ul class="punkter">
+          <li>Læs kommentarerne i koden</li>
+          <li>Spørg AI, og bed om en forklaring</li>
+          <li>Slå op på w3schools.com</li>
+          <li>Spørg os. Vi går rundt hele dagen</li>
+        </ul>
+      </div>
+      <img class="rund-billede rund-billede--lille" src="assets/images/studerende-prototype-pap.webp"
+        alt="En gruppe studerende står bøjet over en prototype af pap med ledninger koblet til en bærbar computer">
+    </div>
+    <aside class="notes">
+      Tid: 09.42–09.45 (3 min.).
+      AI-tip: Skriv »Forklar linje for linje, hvad den her kode gør«, ikke kun »lav det for mig«.
+      Husk: Ved fremvisningen skal I kunne forklare jeres kode.
+      Overgang: »Så er det tilbage til casen.«
+    </aside>
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     3. CASEARBEJDE (09.45–11.00)
+     ===================================================== -->
+<section>
+
+  <section class="divider"
+    data-background-image="assets/images/mobil-optager-video-koncert.webp"
+    data-background-color="#0c1c20"
+    data-background-opacity="0.2">
+    <div class="divider__indhold">
+      <div>
+        <p class="kicker" data-agenda-tid></p>
+        <h2><strong>Casearbejde</strong></h2>
+        <p class="undertitel">Et glimt af MDU · vi fortsætter</p>
+      </div>
+      <ol class="agenda agenda--mini" data-mini-agenda="case"></ol>
+    </div>
+    <aside class="notes">
+      Tid: 09.45. Casen fortsætter fra i går. To arbejdsblokke i dag: 09.45–11.00 og 13.00–13.45. Deadline kl. 13.45.
+    </aside>
+  </section>
+
+  <section class="case-slide"
+    data-background-image="assets/images/mobil-optager-video-koncert.webp"
+    data-background-color="#0c1c20"
+    data-background-opacity="0.2">
+    <div class="case-top">
+      <div>
+        <p class="kicker">Casen · kort oversigt</p>
+        <h2>Et glimt af <strong>MDU</strong></h2>
+      </div>
+      <div class="badge badge--inline">Formål: at stifte bekendtskab med nogle af de værktøjer, en multimediedesigner bruger</div>
+    </div>
+    <div class="case-kort">
+      <div class="kort">
+        <h3>Opgaven</h3>
+        <p>Lav en kort video, en reel eller en short, der viser jeres blik på multimediedesign.</p>
+        <p class="lille">Grupper af 5 · Målgruppe: unge 16–25 år, altså jer selv</p>
+        <h3>Udfordringen</h3>
+        <p>Hvordan kan I give andre unge <strong class="fremhaev">lyst</strong> til at læse multimediedesign?</p>
+      </div>
+      <div class="kort">
+        <h3>Sådan arbejder I</h3>
+        <ol class="case-trin">
+          <li>Find ud af, hvad målgruppen interesserer sig for</li>
+          <li>Vælg budskab og formål</li>
+          <li>Brainstorm, og tegn fx storyboard eller skitser</li>
+          <li>Optag og klip videoen, fx i iMovie, CapCut, TikTok eller Instagram</li>
+          <li class="nyt">Byg en enkel infoside i CodeSandbox <span class="chip chip--fremhaev">Nyt i dag</span></li>
+        </ol>
+      </div>
+      <div class="kort kort--aflever">
+        <h3>Aflever</h3>
+        <p>En kort video + en enkel infoside i HTML, CSS og JavaScript</p>
+        <p class="aflever__deadline">Deadline<strong>kl. 13.45</strong></p>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 09.45–09.47. Casen kender de fra i går, så det er kun en kort oversigt.
+      Det nye i dag er trin 5, infosiden: Videoen skal have en lille webside, I selv koder i CodeSandbox.
+      Næste slide viser, hvad en enkel infoside er.
+    </aside>
+  </section>
+
+  <section>
+    <div class="infoside-layout">
+      <figure class="mobil">
+        <img src="assets/images/infoside-starter-mobil.webp" alt="Starter-skabelonen vist på en mobil med overskriften »Jeres budskab her«, en knap til videoen og afsnittet »Hvorfor læse multimediedesign?«">
+      </figure>
+      <div>
+        <p class="kicker">Nyt i dag</p>
+        <h2>Hvad er en <strong>enkel</strong> infoside?</h2>
+        <ol class="trin infoside-trin">
+          <li><span>Jeres budskab som overskrift</span></li>
+          <li><span>Videoen, indlejret eller som link</span></li>
+          <li><span>Et par linjer om, hvorfor man skal læse MDU</span></li>
+          <li><span>Mindst én ting med JavaScript<small>fx fun fact-knappen i starteren</small></span></li>
+          <li><span>Jeres navne og et link til MDU på eaaa.dk</span></li>
+        </ol>
+        <div class="infoside-chips">
+          <span class="chip"><code>index.html</code> <code>style.css</code> <code>script.js</code></span>
+          <span class="chip">Ser godt ud på en mobil</span>
+          <span class="chip chip--fremhaev">Brug gerne AI, men forklar koden</span>
+        </div>
+        <p class="lille">Enkelt er godt. Aflever linket til jeres sandbox: <span class="pladsholder-tekst">[LINK: hvor grupperne afleverer, fx Teams]</span></p>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 09.47–09.50. Til venstre: starteren på en mobil. Listen følger siden oppefra og ned.
+      Starteren opfylder allerede det meste. I skal skrive jeres eget indhold og indsætte videoen.
+      JavaScript-kravet er opfyldt med fun fact-knappen, men skriv jeres egne facts, eller lav noget nyt.
+      Det handler om at prøve at kode, ikke om et perfekt website.
+    </aside>
+  </section>
+
+
+
+</section>
+
+
+<!-- =====================================================
+     4. BESØG FRA 3. SEMESTER (11.00–11.30)
+     ===================================================== -->
+<section>
+
+  <section class="divider">
+    <div class="deco">
+      <span class="cirkel cirkel--fuld" style="width: 460px; height: 460px; left: -160px; bottom: -200px;"></span>
+    </div>
+    <div class="divider__indhold">
+      <div>
+        <p class="kicker" data-agenda-tid></p>
+        <h2><strong>Besøg</strong> fra 3. semester</h2>
+        <p class="undertitel">Interactive design · Caroline, Mathilde og Sebastian</p>
+      </div>
+      <ol class="agenda agenda--mini" data-mini-agenda="besoeg"></ol>
+    </div>
+    <aside class="notes">
+      Kl. 11.00–11.30. Plan: 2 min. præsentation, ca. 18 min. hvor de fortæller ud fra hjælpepunkterne, ca. 10 min. spørgsmål.
+      Det har de fået at vide: Fortæl om, hvorfor I valgte multimediedesign, hvordan I oplever undervisningen og studielivet,
+      og vis et par af jeres projekter. Gerne også lidt om portfolio og praktiksøgning.
+    </aside>
+  </section>
+
+  <section>
+    <p class="kicker">Besøg fra 3. semester · Interactive design</p>
+    <h2>Mød <strong>de studerende</strong></h2>
+    <div class="tre-kolonner studerende">
+      <figure>
+        <img class="rund-billede rund-billede--lille" src="assets/images/besoeg-caroline.webp" alt="Portræt af Caroline, der smiler, i sort-hvid">
+        <h3>Caroline</h3>
+        <span class="chip">IxD · 3. semester</span>
+        <p><a href="https://carolineclorius.github.io/">carolineclorius.github.io</a></p>
+      </figure>
+      <figure>
+        <img class="rund-billede rund-billede--lille" src="assets/images/besoeg-mathilde.webp" alt="Portræt af Mathilde, der smiler, i sort-hvid">
+        <h3>Mathilde</h3>
+        <span class="chip">IxD · 3. semester</span>
+        <p><a href="https://mathtilsted.github.io/portfolio-mathilde-tilsted-hansen/">mathtilsted.github.io</a></p>
+      </figure>
+      <figure>
+        <img class="rund-billede rund-billede--lille" src="assets/images/besoeg-sebastian.webp" alt="Sebastian, der smiler og holder en plade over hovedet">
+        <h3>Sebastian</h3>
+        <span class="chip">IxD · 3. semester</span>
+        <p><a href="https://www.sebastiangalthen.dk/">sebastiangalthen.dk</a></p>
+      </figure>
+    </div>
+    <aside class="notes">
+      Kl. 11.00–11.02. Byd Caroline, Mathilde og Sebastian velkommen. De går alle på 3. semester på Interactive design,
+      samme linje som jeg underviser på. Lad dem sige navn og én ting om sig selv.
+      Linkene åbner deres portfolios, så de kan vise projekter undervejs.
+    </aside>
+  </section>
+
+  <section>
+    <p class="kicker">Besøg fra 3. semester</p>
+    <h2>Det fortæller <strong>de om</strong></h2>
+    <div class="fire-kolonner hjaelpepunkter">
+      <div class="kort" style="--farve: var(--mellow-rose);">
+        <span class="hjaelpepunkter__nr">1</span>
+        <h3>Hvorfor MDU?</h3>
+        <ul>
+          <li>Hvad fik jer til at vælge multimediedesign?</li>
+          <li>Hvad lavede I, før I startede?</li>
+        </ul>
+      </div>
+      <div class="kort" style="--farve: var(--seafoam);">
+        <span class="hjaelpepunkter__nr">2</span>
+        <h3>Undervisning og studieliv</h3>
+        <ul>
+          <li>Hvordan ser en typisk uge ud?</li>
+          <li>Hvordan er det at arbejde i grupper?</li>
+          <li>Hvad sker der uden for undervisningen?</li>
+        </ul>
+      </div>
+      <div class="kort" style="--farve: var(--teal-green);">
+        <span class="hjaelpepunkter__nr">3</span>
+        <h3>Projekter</h3>
+        <ul>
+          <li>Vis et par projekter</li>
+          <li>Hvilket er I mest stolte af, og hvorfor?</li>
+          <li>Hvad lærte I undervejs?</li>
+        </ul>
+      </div>
+      <div class="kort" style="--farve: var(--almond-buff);">
+        <span class="hjaelpepunkter__nr">4</span>
+        <h3>Portfolio og praktik</h3>
+        <ul>
+          <li>Hvorfor har I et portfolio?</li>
+          <li>Hvordan søger man praktik?</li>
+          <li>Hvor vil I gerne hen?</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">
+      Kl. 11.02–11.20 (ca. 18 min.). Hjælpepunkter til de studerende: De kan tage dem i rækkefølge eller skiftes.
+      Lad sliden stå, mens de fortæller, og skift til deres portfolios, når de viser projekter.
+      Hold øje med tiden. Der skal være ca. 10 min. til spørgsmål fra praktikanterne.
+    </aside>
+  </section>
+
+
+  <section>
+    <div class="to-kolonner">
+      <div>
+        <h2>Spørg <strong>løs</strong></h2>
+        <ul class="punkter">
+          <li>Hvor meget kunne I kode, da I startede?</li>
+          <li>Hvad var sværest i starten?</li>
+          <li>Hvordan bruger I AI i jeres projekter?</li>
+          <li>Hvad ville I ønske, I havde vidst før?</li>
+        </ul>
+      </div>
+      <img class="rund-billede rund-billede--lille" src="assets/images/studerende-laptop-sofa.webp"
+        alt="To studerende sidder i en sofa og kigger sammen på en bærbar computer">
+    </div>
+    <aside class="notes">
+      Kl. 11.20–11.30 (ca. 10 min.). Nu er det praktikanternes tur. Spørgsmålene her supplerer det, de studerende allerede har fortalt.
+      Brug listen, hvis det går i stå. Godt spørgsmål at slutte af med: »Hvad ville I ønske, I havde vidst før?«
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 0.8fr 1.4fr;">
+      <div>
+        <h2>Flere <strong>portfolios</strong></h2>
+        <p class="lille">Websites, de studerende selv har designet og kodet</p>
+      </div>
+      <div class="link-gitter">
+        <a href="https://stinelock.github.io/">stinelock.github.io</a>
+        <a href="https://runedrummer81.github.io/">runedrummer81.github.io</a>
+        <a href="https://eaa24fnie.github.io/">eaa24fnie.github.io</a>
+        <a href="https://tvebak.eu/">tvebak.eu</a>
+        <a href="https://martinlpilgaard.github.io/">martinlpilgaard.github.io</a>
+        <a href="https://anker-sand.github.io/">anker-sand.github.io</a>
+        <a href="https://sofienholm.github.io/">sofienholm.github.io</a>
+        <a href="https://karolineaaby.dk/">karolineaaby.dk</a>
+        <a href="https://nadiaanjum.dk/">nadiaanjum.dk</a>
+        <a href="https://www.majanorbjerg.dk/">majanorbjerg.dk</a>
+      </div>
+    </div>
+    <aside class="notes">
+      Hvis der er tid: flere portfolios fra MDU-studerende.
+      Pointe: Det her har de bygget på få semestre, og mange startede, hvor I er nu.
+      Tjek før dagen, at linksene stadig virker.
+    </aside>
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     5. FROKOST (11.30–12.00)
+     ===================================================== -->
+<section class="divider"
+  data-background-image="assets/images/eaaa-campus-facade.webp"
+  data-background-color="#0c1c20"
+  data-background-opacity="0.12">
+  <div class="divider__indhold">
+    <div>
+      <p class="kicker" data-agenda-tid></p>
+      <h2><strong>Frokost</strong></h2>
+      <p class="undertitel">Vi ses kl. 12.00</p>
+    </div>
+    <ol class="agenda agenda--mini" data-mini-agenda="frokost"></ol>
+  </div>
+  <aside class="notes">
+    Vi ses kl. 12.00 til UX &amp; Content med Maria.
+  </aside>
+</section>
+
+
+<!-- =====================================================
+     6. UX & CONTENT MED MARIA (12.00–13.00)
+     ===================================================== -->
+<section>
+
+  <section class="divider">
+    <div class="deco">
+      <span class="cirkel cirkel--prikket" style="width: 480px; height: 480px; left: -160px; bottom: -320px;"></span>
+    </div>
+    <div class="divider__indhold">
+      <div>
+        <p class="kicker" data-agenda-tid></p>
+        <h2><strong>UX</strong> &amp; Content</h2>
+        <p class="undertitel">Med Maria</p>
+      </div>
+      <ol class="agenda agenda--mini" data-mini-agenda="ux"></ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 1fr 1.2fr;">
+      <img class="rund-billede" src="assets/images/maria.webp"
+        alt="Portræt af Maria Louise Bendixen, der smiler, i sort-hvid">
+      <div>
+        <p class="kicker">Og nu: UX &amp; Content</p>
+        <h2><strong>Maria</strong> Louise Bendixen</h2>
+        <p class="undertitel">UX- og contentunderviser</p>
+        <p class="lille" style="margin-top: 1.2em;">Maria tager over herfra →</p>
+      </div>
+    </div>
+    <aside class="notes">
+      Kl. 12.00. Overlever til Maria. Hun har sine egne slides.
+      Byg bro fra formiddagen: »I har set, hvordan det bygges. Nu skal I høre, hvordan man gør det godt for dem, der bruger det.«
+    </aside>
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     7. SIDSTE ARBEJDSTID (13.00–13.45)
+     ===================================================== -->
+<section>
+
+  <section class="divider">
+    <div class="deco">
+      <span class="cirkel cirkel--fuld" style="width: 520px; height: 520px; left: -260px; bottom: -340px;"></span>
+    </div>
+    <div class="divider__indhold">
+      <div>
+        <p class="kicker" data-agenda-tid></p>
+        <h2><strong>Sidste</strong> arbejdstid</h2>
+        <p class="undertitel">Deadline kl. 13.45</p>
+      </div>
+      <ol class="agenda agenda--mini" data-mini-agenda="arbejdstid"></ol>
+    </div>
+    <aside class="notes">
+      Kl. 13.00. 45 minutter. Mind dem om tidsplanen: videoen på infosiden, test på mobil, aflever linket.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 1.3fr 1fr;">
+      <div>
+        <h2>Klar til <strong>kl. 13.45</strong>?</h2>
+        <ul class="tjekliste" style="font-size: 0.72em;">
+          <li>Videoen er klippet og lagt op</li>
+          <li>Videoen er på infosiden</li>
+          <li>Budskab, tekst, navne og link til eaaa.dk</li>
+          <li>Mindst én ting virker med JavaScript</li>
+          <li>Linket til jeres sandbox er afleveret</li>
+        </ul>
+      </div>
+      <div class="centreret" style="display: flex; flex-direction: column;">
+        <div class="deadline-cirkel"><span>Deadline</span><strong>13.45</strong></div>
+      </div>
+    </div>
+    <aside class="notes">
+      Lad sliden stå i arbejdstiden.
+      Kl. 13.35: Tjek, at begge grupper har afleveret et sandbox-link, der virker.
+    </aside>
+  </section>
+
+</section>
+
+
+<!-- =====================================================
+     8. FREMVISNING OG AFRUNDING (13.45–14.00)
+     ===================================================== -->
+<section>
+
+  <section class="divider">
+    <div class="deco">
+      <span class="cirkel cirkel--prikket" style="width: 560px; height: 560px; left: -200px; bottom: -380px;"></span>
+      <span class="cirkel cirkel--prik" style="width: 26px; height: 26px; left: 520px; top: 150px;"></span>
+    </div>
+    <div class="divider__indhold">
+      <div>
+        <p class="kicker" data-agenda-tid></p>
+        <h2><strong>Fremvisning</strong> og afrunding</h2>
+        <p class="undertitel">Vis, hvad I har lavet</p>
+      </div>
+      <ol class="agenda agenda--mini" data-mini-agenda="fremvisning"></ol>
+    </div>
+    <aside class="notes">
+      Kl. 13.45. Find rækkefølgen på de to grupper, og åbn den første gruppes sandbox-link.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Sådan <strong>viser</strong> I</h2>
+    <ol class="trin">
+      <li><span>Vis videoen</span></li>
+      <li><span>Vis infosiden, og det, der virker med JavaScript</span></li>
+      <li><span>Fortæl kort om jeres budskab og jeres valg</span></li>
+    </ol>
+    <div style="margin-top: 1em;">
+      <div class="grupper-styring">
+        <button class="knap" data-grupper-minus aria-label="Færre grupper">−</button>
+        <span><strong data-antal-grupper>2</strong> grupper</span>
+        <button class="knap" data-grupper-plus aria-label="Flere grupper">+</button>
+        <span>·</span>
+        <span><strong data-tid-pr-gruppe>4:30</strong> min. pr. gruppe</span>
+      </div>
+    </div>
+    <aside class="notes">
+      Justér antallet af grupper med − og +. Tiden pr. gruppe udregnes automatisk
+      (10 min. fremvisning, 30 sek. til skift, rundet ned til 15 sek.). Standarden står i js/main.js (INDSTILLINGER).
+      Åbn hver gruppes sandbox, og vis preview i et nyt vindue.
+    </aside>
+  </section>
+
+  <section>
+    <div class="timer" data-timer>
+      <div class="timer__ur">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="timer__spor" cx="50" cy="50" r="46"></circle>
+          <circle class="timer__fremdrift" cx="50" cy="50" r="46"></circle>
+        </svg>
+        <span class="timer__tid" data-timer-tid role="timer" aria-live="off">4:30</span>
+        <span class="timer__status" data-timer-status>Klar</span>
+      </div>
+      <div>
+        <p class="timer__gruppe">Gruppe <strong data-timer-gruppe>1</strong> af <span data-antal-grupper>2</span></p>
+        <div class="knap-raekke">
+          <button class="knap knap--fyldt" data-timer-start>Start</button>
+          <button class="knap" data-timer-nulstil>Nulstil</button>
+          <button class="knap" data-timer-naeste>Næste gruppe →</button>
+        </div>
+        <p class="lille" style="margin-top: 1.2em;">Tryk <strong>T</strong> for at starte eller pause</p>
+      </div>
+    </div>
+    <aside class="notes">
+      Fremvisningstimer. Grøn = god tid, orange = de sidste 45 sek., rød = tiden er gået.
+      »Næste gruppe« nulstiller timeren og tæller gruppen op. Tasten T starter og pauser.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner">
+      <div>
+        <h2>To dage på <strong>MDU</strong></h2>
+        <p class="lille">Det har I prøvet:</p>
+        <div>
+          <span class="chip">Design</span>
+          <span class="chip">UX og content</span>
+          <span class="chip">Storyboard og video</span>
+          <span class="chip">HTML, CSS og JavaScript</span>
+        </div>
+        <p class="stor" style="margin-top: 0.8em;">Det er det, multimediedesignere <strong class="fremhaev">laver</strong>.</p>
+      </div>
+      <img class="rund-billede rund-billede--lille" src="assets/images/workshop-post-its-bord.webp"
+        alt="Et langt bord fyldt med post-its, skitser og fotos fra en workshop, hvor studerende arbejder i baggrunden">
+    </div>
+    <aside class="notes">
+      Ca. 13.55. Opsamling på hele studiepraktikken. Spørg: Hvad overraskede jer mest? Hvad var sjovest?
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 1.3fr 1fr;">
+      <div>
+        <h2>Vil du læse <strong>multimediedesign</strong>?</h2>
+        <ul class="punkter" style="font-size: 0.8em;">
+          <li><a href="https://www.eaaa.dk/videregaende-uddannelser/erhvervsakademiuddannelse/multimediedesigner/">Multimediedesigner på eaaa.dk</a></li>
+          <li><a href="https://www.eaaa.dk/videregaende-uddannelser/ansog-om-optagelse/">Sådan søger du optagelse</a></li>
+          <li>Studievejledning: <span class="pladsholder-tekst">[LINK: studievejledning for MDU]</span></li>
+        </ul>
+      </div>
+      <div class="pladsholder qr" style="margin: 0 auto;">[QR: link til MDU’s side på eaaa.dk]</div>
+    </div>
+    <aside class="notes">
+      Vis QR-koden, og giv dem tid til at scanne.
+      Studievejledningen svarer på spørgsmål om ansøgning, optagelse og adgangskrav.
+      (Det gamle deck linkede til Dorte Hedevangs medarbejderside. Tjek, om det stadig er den rigtige kontakt.)
+    </aside>
+  </section>
+
+  <section class="titel centreret"
+    data-background-image="assets/images/eaaa-campus-aften.webp"
+    data-background-color="#0c1c20"
+    data-background-opacity="0.35">
+    <div class="deco">
+      <span class="cirkel cirkel--prikket" style="width: 640px; height: 640px; left: 320px; top: 40px;"></span>
+    </div>
+    <img class="logo" src="assets/logo-eaaa-hvid.png" alt="Erhvervsakademi Aarhus">
+    <h1><strong>Tak</strong> for to dage</h1>
+    <p class="undertitel">Vi håber at se jer igen, som studerende.</p>
+    <aside class="notes">
+      Kl. 14.00. Sig tak, og husk at sige tak til de studerende fra 3. semester og til Maria.
+    </aside>
+  </section>
+
+</section>
+
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
