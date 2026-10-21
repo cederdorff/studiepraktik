@@ -1559,9 +1559,9 @@ html.reveal-print .reveal > .cover-video {
 
 .reveal .case91__layout {
   display: grid;
-  grid-template-columns: 0.8fr 1.7fr;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 48px;
+  gap: 44px;
 }
 
 /* Titlen som i Keynote: versaler med bred spærring og en lodret streg */
@@ -1569,7 +1569,8 @@ html.reveal-print .reveal > .cover-video {
   margin: 0;
   padding-right: 44px;
   border-right: 2px solid var(--quiet-gray);
-  font-size: 1.7em;
+  font-size: 1.55em;
+  white-space: nowrap;
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0.16em;
@@ -1627,10 +1628,11 @@ html.reveal-print .reveal > .cover-video {
 }
 
 .reveal .case91 .badge {
-  right: 56px;
-  bottom: 40px;
-  width: 210px;
-  height: 210px;
+  left: 150px;
+  right: auto;
+  bottom: 56px;
+  width: 190px;
+  height: 190px;
   padding: 30px;
   font-size: 0.4em;
 }
