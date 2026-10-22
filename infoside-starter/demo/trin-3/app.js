@@ -2,8 +2,8 @@
 const knap = document.querySelector("button");
 const tekst = document.querySelector("#fakta");
 
-// 2. Når der klikkes: vis nyt indhold, og skift farve
+// 2. Når der klikkes: vis ny tekst, og giv den en farve
 knap.addEventListener("click", function () {
   tekst.textContent = "På MDU lærer du både design og kode!";
-  document.body.style.backgroundColor = "#3a646d";
+  tekst.style.color = "#f0e87d";
 });
