@@ -710,6 +710,86 @@ html.reveal-print .reveal > .cover-video {
 }
 
 
+/* ---------- MDU: sådan er uddannelsen bygget op ---------- */
+.reveal .semestre {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.reveal .semester {
+  background: var(--flade);
+  border-radius: 24px;
+  padding: 24px 26px;
+  border-top: 8px solid var(--farve);
+}
+
+.reveal .semester .semester__nr {
+  font-size: 0.45em;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+  margin-bottom: 0.4em;
+}
+
+.reveal .semester h3 {
+  color: var(--farve);
+  font-size: 0.9em;
+}
+
+.reveal .semester p {
+  font-size: 0.58em;
+  margin: 0;
+}
+
+/* Game developer som eget forløb under hovedforløbet */
+.reveal .forloeb-label {
+  font-size: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+  margin: 22px 0 10px;
+}
+
+.reveal .forloeb-label strong {
+  color: var(--mellow-rose);
+}
+
+.reveal .semestre--game {
+  margin-top: 0;
+}
+
+.reveal .semester.semester--lille {
+  padding: 14px 22px;
+  border-top-width: 0;
+  border-left: 6px solid var(--farve);
+  border-radius: 16px;
+}
+
+.reveal .linjer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 0.4em;
+}
+
+.reveal .linjer span {
+  font-size: 0.52em;
+  font-weight: 700;
+  padding: 0.55em 0.9em;
+  border-radius: 999px;
+  background: var(--flade-2);
+}
+
+.reveal .linjer small {
+  font-weight: 400;
+  color: var(--tekst-sekundaer);
+}
+
+
 /* ---------- MDU: hvad kan man blive? ---------- */
 .reveal .job {
   border-top: 8px solid var(--farve);
@@ -1260,6 +1340,38 @@ html.reveal-print .reveal > .cover-video {
   display: block;
   width: 100%;
   border-radius: 12px;
+}
+
+
+/* ---------- CodeSandbox-øvelser ---------- */
+.reveal .oevelse-trin {
+  font-size: 0.72em;
+}
+
+.reveal .oevelse-trin li {
+  margin: 0.45em 0;
+}
+
+/* Øvelse 2 og 3: kun 10 linjer kode, så den kan være større */
+.reveal .kode-slide.oevelse pre {
+  font-size: 0.48em;
+}
+
+.reveal .kode-slide.oevelse pre code {
+  padding: 18px 16px;
+}
+
+/* Start og mål side om side */
+.reveal .foer-efter {
+  display: grid;
+  gap: 16px;
+}
+
+.reveal .foer-efter .resultat img {
+  max-height: 210px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 

@@ -22,15 +22,23 @@ python3 -m http.server 8000
 
 `INDSTILLINGER` øverst i `js/main.js` styrer antal grupper, fremvisningstid, skift mellem grupper og hvornår timeren skifter farve. Antallet af grupper kan også ændres med −/+ på sliden »Sådan viser I«.
 
-## Starteren i CodeSandbox
+## CodeSandbox
 
-`infoside-starter/` er et statisk projekt (`sandbox.config.json` med `"template": "static"`). Sådan kommer det i CodeSandbox:
+Alle eksempler bruger samme struktur: `index.html`, `styles.css` og `app.js`, plus `sandbox.config.json` med `"template": "static"`.
 
-1. Opret en ny sandbox i CodeSandbox ud fra skabelonen *HTML + CSS* (static).
-2. Slet skabelonens filer, og træk indholdet af `infoside-starter/` ind i filpanelet.
-3. Kopiér linket, og indsæt det ved `[LINK: CodeSandbox med infoside-starter]` i `index.html`.
+| Mappe | Bruges til |
+| --- | --- |
+| `codesandbox/1-html-css` | Øvelse 1, start |
+| `codesandbox/1-html-css-loesning` | Øvelse 1, løsning |
+| `codesandbox/2-knap` | Øvelse 2: knap, der ændrer siden |
+| `codesandbox/3-input` | Øvelse 3: input og hilsen |
+| `infoside-starter` | Starteren til casen (demo-trinene ligger i `infoside-starter/demo`) |
 
-Demo-trinene i `infoside-starter/demo/trin-1..3` kan lægges op på samme måde, hvis du vil vise dem i CodeSandbox.
+Sådan kommer en mappe i CodeSandbox:
+
+1. Opret en ny sandbox ud fra skabelonen *HTML + CSS* (static).
+2. Slet skabelonens filer, og træk mappens indhold ind i filpanelet.
+3. Kopiér linket, og indsæt det ved den tilsvarende `[LINK: CodeSandbox, …]` i `index.html`.
 
 ## Struktur
 
@@ -40,6 +48,7 @@ css/eaaa-tema.css     Dark mode-fortolkning af EAAA's designguide (farver som CS
 css/kode.css          Syntax highlighting i EAAA-farver
 js/main.js            Agenda på dividerne, fremvisningstimer, Reveal-opsætning
 assets/               EAAA-logo (hvid) og billeder (bl.a. screenshots fra de gamle Keynote-slides)
+codesandbox/          Øvelse 1–3 til CodeSandbox
 infoside-starter/     Skabelonen, praktikanterne forker i CodeSandbox
 ```
 

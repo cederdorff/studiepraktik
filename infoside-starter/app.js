@@ -1,5 +1,5 @@
 /* =========================================================
-   SCRIPT.JS – opførslen
+   APP.JS – opførslen
    Her bestemmer I, hvad der sker, når man klikker.
    ========================================================= */
 
@@ -36,7 +36,7 @@ const temaKnap = document.querySelector("#tema-knap");
 
 temaKnap.addEventListener("click", function () {
   // Sæt klassen "moerkt-tema" på <body> – eller fjern den igen.
-  // Farverne til det mørke tema står i style.css
+  // Farverne til det mørke tema står i styles.css
   document.body.classList.toggle("moerkt-tema");
 });
 

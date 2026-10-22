@@ -1,0 +1,167 @@
+/* Samme HTML – fire temaer. Uden tema ser siden ud, som browseren selv viser den. */
+
+/* Knapperne til at skifte tema */
+.vaelg-tema {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+
+/* ---------- Tema 1: mørk og rund ---------- */
+.tema-1 {
+  margin: 0;
+  padding: 3rem;
+  background: #0c1c20;
+  color: #f3f4f7;
+  font-family: system-ui, sans-serif;
+}
+
+.tema-1 h1 {
+  font-size: 3rem;
+  color: #80b4bf;
+  margin: 0;
+}
+
+.tema-1 main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tema-1 article {
+  background: #1d3b43;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+.tema-1 h2 {
+  color: #f0e87d;
+}
+
+.tema-1 a {
+  color: #80b4bf;
+}
+
+
+/* ---------- Tema 2: lys og legende ---------- */
+.tema-2 {
+  margin: 0;
+  padding: 3rem;
+  background: #f4ebc0;
+  color: #3a646d;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.tema-2 h1 {
+  font-size: 3.5rem;
+  margin: 0;
+}
+
+.tema-2 main {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.tema-2 article {
+  background: #d9a6a1;
+  color: white;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: grid;
+  place-content: center;
+  padding: 1rem;
+  transform: rotate(-4deg);
+}
+
+.tema-2 article:nth-child(2) {
+  background: #84b18f;
+  transform: rotate(4deg);
+}
+
+.tema-2 article:nth-child(3) {
+  background: #80b4bf;
+}
+
+.tema-2 a {
+  color: #3a646d;
+  font-weight: bold;
+}
+
+
+/* ---------- Tema 3: avis ---------- */
+.tema-3 {
+  margin: 0 auto;
+  padding: 2rem 3rem;
+  max-width: 900px;
+  background: white;
+  color: black;
+  font-family: Georgia, serif;
+}
+
+.tema-3 header {
+  border-bottom: 4px double black;
+  text-align: center;
+}
+
+.tema-3 h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.tema-3 main {
+  columns: 3;
+  column-rule: 1px solid #ccc;
+  padding: 1rem 0;
+}
+
+.tema-3 h2 {
+  font-style: italic;
+  margin-top: 0;
+}
+
+.tema-3 a {
+  color: black;
+}
+
+
+/* ---------- Tema 4: neon ---------- */
+.tema-4 {
+  margin: 0;
+  padding: 3rem;
+  background: black;
+  color: #f0e87d;
+  font-family: ui-monospace, monospace;
+  text-transform: uppercase;
+}
+
+.tema-4 h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #e47125;
+  text-shadow: 0 0 20px #e47125;
+}
+
+.tema-4 main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tema-4 article {
+  border: 4px solid #f0e87d;
+  padding: 1rem;
+}
+
+.tema-4 a {
+  color: black;
+  background: #f0e87d;
+  padding: 0.3rem 0.6rem;
+}

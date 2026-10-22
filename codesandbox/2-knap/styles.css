@@ -1,0 +1,14 @@
+body {
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: #3a646d;
+  color: white;
+}

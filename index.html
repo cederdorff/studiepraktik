@@ -113,6 +113,56 @@
   </section>
 
   <section>
+    <p class="kicker">Opsamling</p>
+    <h2>Sådan er uddannelsen <strong>bygget op</strong></h2>
+    <div class="semestre">
+      <div class="semester" style="--farve: var(--teal-green);">
+        <p class="semester__nr">1. semester</p>
+        <h3>Fælles grundlag</h3>
+        <p>Design og programmering af websites: HTML, CSS, JavaScript, Figma og GitHub</p>
+      </div>
+      <div class="semester" style="--farve: var(--seafoam);">
+        <p class="semester__nr">2. og 3. semester</p>
+        <h3>Vælg en retning</h3>
+        <div class="linjer">
+          <span>Interactive design <small>· JavaScript, React</small></span>
+          <span>Experience design <small>· oplevelser og content</small></span>
+          <span>E-commerce <small>· start i januar</small></span>
+          <span>International <small>· på engelsk</small></span>
+        </div>
+      </div>
+      <div class="semester" style="--farve: var(--almond-buff);">
+        <p class="semester__nr">4. semester</p>
+        <h3>Praktik</h3>
+        <p>10 uger i en virksomhed og et afsluttende eksamensprojekt</p>
+      </div>
+    </div>
+    <p class="forloeb-label">Eget forløb fra dag 1: <strong>Game developer</strong></p>
+    <div class="semestre semestre--game">
+      <div class="semester semester--lille" style="--farve: var(--mellow-rose);">
+        <p class="semester__nr">1. semester</p>
+        <p>2D game development</p>
+      </div>
+      <div class="semester semester--lille" style="--farve: var(--mellow-rose);">
+        <p class="semester__nr">2. og 3. semester</p>
+        <p>World building, 3D og multiplayer game development</p>
+      </div>
+      <div class="semester semester--lille" style="--farve: var(--mellow-rose);">
+        <p class="semester__nr">4. semester</p>
+        <p>Praktik og eksamensprojekt</p>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 08.32 (1 min.). Kort genopfriskning fra i går, ikke en ny gennemgang.
+      Øverst: 1. semester er fælles. Fra 2. semester vælger man retning: Interactive design (min linje), Experience design
+      eller E-commerce (kun studiestart i januar). International er den engelsksprogede linje, der ligner de andre.
+      4. semester: 10 ugers praktik i Danmark eller udlandet og et afsluttende eksamensprojekt, ofte med en virksomhed.
+      Nederst: Game developer er sit eget forløb med spil fra dag 1, så 1. semester ser anderledes ud.
+      Tjek game-semestrenes indhold mod den aktuelle studieordning.
+    </aside>
+  </section>
+
+  <section>
     <p class="kicker">Status på casen</p>
     <h2>Hvor langt er I med <strong>videoen</strong>?</h2>
     <div class="status-raekke">
@@ -703,7 +753,7 @@ button {
   font-size: 1rem;
 }
         </code></pre>
-        <p class="lille">Fil: <code>style.css</code> · kobles på i <code>&lt;head&gt;</code> med <code>&lt;link rel="stylesheet" href="style.css"&gt;</code></p>
+        <p class="lille">Fil: <code>styles.css</code> · kobles på i <code>&lt;head&gt;</code> med <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></p>
       </div>
       <figure class="resultat">
         <figcaption>Resultat</figcaption>
@@ -712,7 +762,7 @@ button {
     </div>
     <aside class="notes">
       Tid: 09.13–09.18 (5 min.).
-      Først: CSS ligger i sin egen fil, style.css, og kobles på med én linje i head.
+      Først: CSS ligger i sin egen fil, styles.css, og kobles på med én linje i head.
       1) body: baggrund, tekstfarve, skrift, centrering og luft. Farverne er skrevet som farvekoder, fx #0c1c20.
       2) h1 får en lyseblå farve.
       3) button: samme farve, ingen kant, helt runde hjørner og lidt luft. Nu ligner det en rigtig knap.
@@ -744,7 +794,7 @@ knap.addEventListener("click", function () {
   tekst.textContent = fakta[nr];
 });
         </code></pre>
-        <p class="lille">Fil: <code>script.js</code> · kobles på lige før <code>&lt;/body&gt;</code> med <code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></p>
+        <p class="lille">Fil: <code>app.js</code> · kobles på lige før <code>&lt;/body&gt;</code> med <code>&lt;script src="app.js"&gt;&lt;/script&gt;</code></p>
       </div>
       <figure class="resultat">
         <figcaption>Resultat efter klik</figcaption>
@@ -753,7 +803,7 @@ knap.addEventListener("click", function () {
     </div>
     <aside class="notes">
       Tid: 09.18–09.23 (5 min.).
-      JavaScript ligger i script.js og kobles på nederst i body.
+      JavaScript ligger i app.js og kobles på nederst i body.
       1) En liste (et array) med tekster. Hver tekst i anførselstegn, og komma imellem.
       2) Vi finder knappen og den tomme p på siden. Det er sådan, JS »får fat i« HTML.
       3) addEventListener: »Når nogen klikker, så gør det her.«
@@ -764,80 +814,135 @@ knap.addEventListener("click", function () {
   </section>
 
   <section>
-    <div class="to-kolonner" style="grid-template-columns: 0.9fr 1.3fr;">
+    <div class="to-kolonner" style="grid-template-columns: 1fr 1.05fr;">
       <div>
         <h2>Prøv selv i <strong>CodeSandbox</strong></h2>
         <ol class="trin">
-          <li><span>Gå til <a href="https://codesandbox.io/">codesandbox.io</a></span></li>
-          <li><span>Log ind, fx med Google</span></li>
-          <li><span>Kode til venstre, resultat til højre</span></li>
+          <li><span>Gå til <a href="https://codesandbox.io/">codesandbox.io</a>, og log ind<small>fx med Google</small></span></li>
+          <li><span>Åbn øvelsens link, og tryk <strong>Fork</strong><small>så får du din egen kopi</small></span></li>
+          <li><span>Ret i koden, og gem<small>preview til højre opdaterer</small></span></li>
         </ol>
       </div>
-      <img class="browser-billede" src="assets/images/codesandbox-javascript-knap.webp"
-        alt="CodeSandbox med HTML og JavaScript til venstre og den færdige side med en knap til højre">
+      <div>
+        <p class="kicker">Alle eksempler har de samme tre filer</p>
+        <ul class="filtrae">
+          <li><span>index.html</span><span>Indholdet (HTML)</span></li>
+          <li><span>styles.css</span><span>Udseendet (CSS)</span></li>
+          <li><span>app.js</span><span>Opførslen (JavaScript)</span></li>
+        </ul>
+      </div>
     </div>
     <aside class="notes">
       Tid: 09.23–09.25 (2 min.). Intet at installere. Alt kører i browseren.
       Få alle til at logge ind nu, så det er klaret, før casen starter.
+      Pointe: Alle øvelser, demoen og infoside-starteren har de samme tre filer.
     </aside>
   </section>
 
   <section>
-    <h2>1 · <strong>HTML</strong> og CSS</h2>
-    <ol class="trin">
-      <li><span>Åbn starterprojektet<small><a href="https://codesandbox.io/s/html-css-javascript-starter-whlnu">codesandbox.io/s/html-css-javascript-starter-whlnu</a></small></span></li>
-      <li><span>Tilføj et afsnit med <code>&lt;p&gt;</code></span></li>
-      <li><span>Centrér det hele, og skift farve og skriftstørrelse i CSS</span></li>
-      <li><span>Tilføj et billede med <code>&lt;img&gt;</code>, og sæt bredden</span></li>
-    </ol>
-    <p class="lille" style="margin-top: 1em;">Løsning: <a href="https://codesandbox.io/s/html-css-javascript-9nypo">codesandbox.io/s/html-css-javascript-9nypo</a></p>
+    <div class="to-kolonner" style="grid-template-columns: 1fr 1.05fr; gap: 48px;">
+      <div>
+        <p class="kicker">Øvelse 1 · index.html og styles.css</p>
+        <h2>1 · <strong>HTML</strong> og CSS</h2>
+        <ol class="trin oevelse-trin">
+          <li><span>Skriv dit navn i overskriften <code>&lt;h1&gt;</code></span></li>
+          <li><span>Tilføj et afsnit mere med <code>&lt;p&gt;</code></span></li>
+          <li><span>Centrér det hele, og skift farve og skriftstørrelse i <code>styles.css</code></span></li>
+          <li><span>Tilføj et billede med <code>&lt;img&gt;</code>, og sæt bredden</span></li>
+        </ol>
+        <p class="lille">Øvelse: <span class="pladsholder-tekst">[LINK: CodeSandbox, øvelse 1]</span> · Løsning: <span class="pladsholder-tekst">[LINK: CodeSandbox, øvelse 1, løsning]</span></p>
+      </div>
+      <div class="foer-efter">
+        <figure class="resultat">
+          <figcaption>Start</figcaption>
+          <img src="assets/images/oevelse-1-start.webp" alt="Startsiden: en overskrift »Hej, jeg hedder …« og et afsnit uden styling">
+        </figure>
+        <figure class="resultat">
+          <figcaption>Mål</figcaption>
+          <img src="assets/images/oevelse-1-maal.webp" alt="Løsningen: centreret tekst i farve, en stor overskrift med navn, to afsnit og et billede med runde hjørner">
+        </figure>
+      </div>
+    </div>
     <aside class="notes">
       Tid: 09.25–09.31 (6 min.). Kod med på storskærmen, mens de prøver selv.
-      Tip: text-align: center på body centrerer alt. Billeder: src og width.
-      Tjek før dagen, at starter- og løsningslinket stadig virker.
+      Tip: text-align: center på body centrerer alt. Billedet i løsningen ligger i sandboxen som billede.webp.
+      De kan også bruge et link til et billede fra nettet i src.
+      Filerne ligger i codesandbox/1-html-css og codesandbox/1-html-css-loesning.
     </aside>
   </section>
 
-  <section>
-    <div class="to-kolonner" style="grid-template-columns: 0.9fr 1.3fr; gap: 48px;">
-      <div>
-        <h2>2 · <strong>JavaScript</strong></h2>
-        <ul class="punkter" style="font-size: 0.8em;">
-          <li>Klik på »Try me«. Hvad sker der?</li>
-          <li>Skift farven fra <code>"red"</code> til en anden</li>
-          <li>Skift teksten i overskriften</li>
-        </ul>
-        <p class="lille"><a href="https://codesandbox.io/s/javascript-starter-brg12">codesandbox.io/s/javascript-starter-brg12</a></p>
+  <section class="kode-slide oevelse">
+    <p class="kicker">Øvelse 2 · app.js</p>
+    <h2>2 · <strong>Knap</strong></h2>
+    <div class="kode-og-resultat" style="grid-template-columns: 1.6fr 1fr; align-items: center;">
+      <div class="kode-kolonne">
+        <pre><code class="language-javascript" data-trim data-line-numbers>
+// 1. En funktion, der ændrer siden
+function aendrSiden() {
+  document.body.style.backgroundColor = "red";
+  document.body.style.color = "white";
+  document.querySelector("h1").textContent = "Siden er ændret!";
+}
+
+// 2. Kør funktionen, når der klikkes på knappen
+const knap = document.querySelector("button");
+knap.addEventListener("click", aendrSiden);
+        </code></pre>
+        <p class="lille">Fil: <code>app.js</code></p>
       </div>
-      <img class="browser-billede" src="assets/images/codesandbox-javascript-knap.webp"
-        alt="CodeSandbox med HTML og JavaScript til venstre og en side med overskrift og knappen »Try me« til højre">
+      <div>
+        <ol class="trin oevelse-trin">
+          <li><span>Klik på »Prøv mig«. Hvad sker der?</span></li>
+          <li><span>Skift <code>"red"</code> i linje 3 til en anden farve</span></li>
+          <li><span>Skift teksten i linje 5</span></li>
+          <li><span>Bonus: Få også knappen til at skifte tekst</span></li>
+        </ol>
+        <p class="lille"><span class="pladsholder-tekst">[LINK: CodeSandbox, øvelse 2]</span></p>
+      </div>
     </div>
     <aside class="notes">
       Tid: 09.31–09.35 (4 min.).
-      Funktionen changeMyWebsite ændrer baggrundsfarve, tekstfarve og overskrift og viser en alert.
-      Den kører, fordi addEventListener lytter efter klik på knappen.
-      Tjek før dagen, at sandboxen stadig virker.
+      Linje 2–6: en funktion, en opskrift, der først kører, når den bliver kaldt.
+      Linje 9–10: hvem, hvornår og hvad. Find knappen, og kør funktionen ved klik, præcis som på »Sådan læser du koden«.
+      Bonus: knap.textContent = "Igen!" inde i funktionen.
+      Filerne ligger i codesandbox/2-knap.
     </aside>
   </section>
 
-  <section>
-    <div class="to-kolonner" style="grid-template-columns: 0.9fr 1.3fr; gap: 48px;">
-      <div>
-        <h2>3 · <strong>Input</strong></h2>
-        <ul class="punkter" style="font-size: 0.8em;">
-          <li>Skriv dit navn, og klik</li>
-          <li>Find linjen, der sætter navnet ind på siden</li>
-          <li>Skriv noget andet foran navnet</li>
-        </ul>
-        <p class="lille"><a href="https://codesandbox.io/s/javascript-input-okm7e">codesandbox.io/s/javascript-input-okm7e</a></p>
+  <section class="kode-slide oevelse">
+    <p class="kicker">Øvelse 3 · app.js</p>
+    <h2>3 · <strong>Input</strong></h2>
+    <div class="kode-og-resultat" style="grid-template-columns: 1.6fr 1fr; align-items: center;">
+      <div class="kode-kolonne">
+        <pre><code class="language-javascript" data-trim data-line-numbers>
+// 1. Find felterne på siden
+const navnFelt = document.querySelector("#navn");
+const knap = document.querySelector("button");
+const hilsen = document.querySelector("#hilsen");
+
+// 2. Når der klikkes: læs navnet, og vis en hilsen
+knap.addEventListener("click", function () {
+  const navn = navnFelt.value;
+  hilsen.textContent = "Hej " + navn + "!";
+});
+        </code></pre>
+        <p class="lille">Fil: <code>app.js</code></p>
       </div>
-      <img class="browser-billede" src="assets/images/codesandbox-javascript-input.webp"
-        alt="CodeSandbox med et tekstfelt og en knap, hvor det indtastede navn er skrevet ind på siden under feltet">
+      <div>
+        <ol class="trin oevelse-trin">
+          <li><span>Skriv dit navn, og klik på »Vis«</span></li>
+          <li><span>Find linjen, der skriver hilsenen</span></li>
+          <li><span>Skift »Hej« til noget andet</span></li>
+          <li><span>Bonus: Vis navnet med store bogstaver<small><code>navn.toUpperCase()</code></small></span></li>
+        </ol>
+        <p class="lille"><span class="pladsholder-tekst">[LINK: CodeSandbox, øvelse 3]</span></p>
+      </div>
     </div>
     <aside class="notes">
       Tid: 09.35–09.37 (2 min., spring over, hvis tiden er knap).
-      displayName henter værdien fra input-feltet og sætter den ind i section#content.
-      Tjek før dagen, at sandboxen stadig virker.
+      Linje 8: .value læser det, der står i tekstfeltet. Linje 9: skriver hilsenen ind på siden (det er linjen i opgave 2).
+      Det er samme mønster som fun fact-knappen i jeres starter.
+      Filerne ligger i codesandbox/3-input.
     </aside>
   </section>
 
@@ -848,7 +953,7 @@ knap.addEventListener("click", function () {
     <ol class="trin">
       <li><span>Åbn starteren<small><span class="pladsholder-tekst">[LINK: CodeSandbox med infoside-starter]</span></small></span></li>
       <li><span>Tryk <strong>Fork</strong>, så får gruppen sin egen kopi</span></li>
-      <li><span>Ret i <code>index.html</code>, <code>style.css</code> og <code>script.js</code><small>Preview til højre opdaterer, når I gemmer</small></span></li>
+      <li><span>Ret i <code>index.html</code>, <code>styles.css</code> og <code>app.js</code><small>Preview til højre opdaterer, når I gemmer</small></span></li>
       <li><span>Del linket til jeres sandbox i gruppen</span></li>
     </ol>
     <aside class="notes">
@@ -867,14 +972,14 @@ knap.addEventListener("click", function () {
       <ul class="filtrae">
         <li class="mappe"><span>infoside-starter/</span></li>
         <li><span>index.html</span><span>Indholdet: budskab, video, tekst og navne</span></li>
-        <li><span>style.css</span><span>Udseendet: farverne står øverst</span></li>
-        <li><span>script.js</span><span>Opførslen: fun fact- og tema-knap</span></li>
+        <li><span>styles.css</span><span>Udseendet: farverne står øverst</span></li>
+        <li><span>app.js</span><span>Opførslen: fun fact- og tema-knap</span></li>
         <li><span>README.md</span><span>Sådan arbejder I i sandboxen</span></li>
       </ul>
     </div>
     <aside class="notes">
       Tid: 09.40–09.42 (2 min.). Vis kommentarerne, fx »Skriv jeres budskab her« og »Indsæt link til jeres video her«.
-      Vis farvevariablerne øverst i style.css, og skift én farve live.
+      Vis farvevariablerne øverst i styles.css, og skift én farve live.
     </aside>
   </section>
 
@@ -980,7 +1085,7 @@ knap.addEventListener("click", function () {
           <li><span>Jeres navne og et link til MDU på eaaa.dk</span></li>
         </ol>
         <div class="infoside-chips">
-          <span class="chip"><code>index.html</code> <code>style.css</code> <code>script.js</code></span>
+          <span class="chip"><code>index.html</code> <code>styles.css</code> <code>app.js</code></span>
           <span class="chip">Ser godt ud på en mobil</span>
           <span class="chip chip--fremhaev">Brug gerne AI, men forklar koden</span>
         </div>

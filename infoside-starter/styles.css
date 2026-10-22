@@ -1,5 +1,5 @@
 /* =========================================================
-   STYLE.CSS – udseendet
+   STYLES.CSS – udseendet
    Her bestemmer I, hvordan siden ser ud.
    Prøv at ændre en værdi, gem filen og opdatér browseren.
    ========================================================= */
@@ -19,7 +19,7 @@
   --runding: 1.25rem;     /* hvor runde hjørnerne er */
 }
 
-/* Mørkt tema. Slås til og fra af "Skift tema"-knappen (se script.js) */
+/* Mørkt tema. Slås til og fra af "Skift tema"-knappen (se app.js) */
 .moerkt-tema {
   --baggrund: #0c1c20;
   --flade: #15303a;

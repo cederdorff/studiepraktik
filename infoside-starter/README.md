@@ -7,8 +7,8 @@ Det her er jeres udgangspunkt for infosiden. Siden virker allerede. I skal bare 
 | Fil | Hvad den gør |
 | --- | --- |
 | `index.html` | **Indholdet**: budskab, video, tekst og navne |
-| `style.css` | **Udseendet**: farver, skrift, afstande |
-| `script.js` | **Opførslen**: fun fact-knappen og tema-knappen |
+| `styles.css` | **Udseendet**: farver, skrift, afstande |
+| `app.js` | **Opførslen**: fun fact-knappen og tema-knappen |
 | `demo/` | Koden fra Rasmus’ demo i tre trin, hvis I vil se, hvordan det blev bygget |
 
 ## Sådan kommer I i gang i CodeSandbox
@@ -16,7 +16,7 @@ Det her er jeres udgangspunkt for infosiden. Siden virker allerede. I skal bare 
 1. Åbn linket til starteren, som I har fået af Rasmus.
 2. Log ind, fx med jeres Google-konto.
 3. Tryk **Fork**. Så får gruppen sin egen kopi, som I kan rette i.
-4. Ret i `index.html`, `style.css` og `script.js`. Preview til højre opdaterer, når I gemmer (`Cmd + S` / `Ctrl + S`).
+4. Ret i `index.html`, `styles.css` og `app.js`. Preview til højre opdaterer, når I gemmer (`Cmd + S` / `Ctrl + S`).
 5. Del linket til jeres sandbox med resten af gruppen.
 
 Tip: Find kommentarerne i koden, fx `<!-- Skriv jeres budskab her -->`. De viser, hvor I skal skrive.
