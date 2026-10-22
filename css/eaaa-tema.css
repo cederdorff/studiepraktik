@@ -1361,6 +1361,73 @@ html.reveal-print .reveal > .cover-video {
   padding: 18px 16px;
 }
 
+/* Øvelse 1: HTML-opgaver, CSS-opgaver og start/mål */
+.reveal .oevelse-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.9fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.reveal .oevelse-1 .kort {
+  border-top: 8px solid var(--farve);
+  padding: 22px 24px;
+}
+
+.reveal .oevelse-1 h3 {
+  color: var(--farve);
+  font-size: 0.65em;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6em;
+}
+
+.reveal .oevelse-liste {
+  margin: 0 0 0.6em;
+  padding-left: 1.3em;
+  font-size: 0.56em;
+}
+
+.reveal .oevelse-liste li {
+  margin: 0.45em 0;
+}
+
+.reveal .oevelse-1 .lille {
+  font-size: 0.5em;
+  margin: 0;
+}
+
+/* Samme HTML, forskellig CSS */
+.reveal .css-galleri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.reveal .css-galleri figure {
+  margin: 0;
+}
+
+.reveal .css-galleri img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--kant);
+}
+
+.reveal .css-galleri figcaption {
+  font-size: 0.45em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+  margin-top: 8px;
+}
+
+.reveal .css-galleri__tekst {
+  align-self: center;
+  font-size: 0.7em;
+}
+
 /* Start og mål side om side */
 .reveal .foer-efter {
   display: grid;

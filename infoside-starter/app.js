@@ -6,27 +6,14 @@
 
 // ---------- 1. FUN FACT-KNAP ----------
 
-// En liste (et "array") med fun facts.
-// Skriv jeres egne! Husk "anførselstegn" om teksten og komma mellem linjerne.
-const fakta = [
-  "Multimediedesign er en 2-årig erhvervsakademiuddannelse.",
-  "Du kommer i praktik i en rigtig virksomhed som en del af uddannelsen.",
-  "På MDU lærer du både design, UX, content og kode.",
-  "Du arbejder i projekter sammen med andre studerende.",
-  "Det, du lærer, kan bruges til websites, apps, spil, sociale medier og meget mere."
-];
-
 // Find knappen og tekstfeltet i index.html (via deres id)
 const faktaKnap = document.querySelector("#fakta-knap");
 const faktaTekst = document.querySelector("#fakta-tekst");
 
 // Når man klikker på knappen, kører koden mellem { og }
 faktaKnap.addEventListener("click", function () {
-  // Vælg et tilfældigt nummer fra 0 op til antallet af facts
-  const nr = Math.floor(Math.random() * fakta.length);
-
-  // Skriv det valgte fact ind på siden
-  faktaTekst.textContent = fakta[nr];
+  // Skriv jeres eget fun fact om MDU her – husk "anførselstegn" om teksten
+  faktaTekst.textContent = "Som multimediedesigner er du klar til job på 2 år.";
 });
 
 

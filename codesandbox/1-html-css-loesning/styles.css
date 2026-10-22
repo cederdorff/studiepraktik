@@ -1,16 +1,31 @@
 body {
   font-family: system-ui, sans-serif;
-  text-align: center;
   background: #f3f4f7;
-  color: #3a646d;
+  color: #1d2f33;
+  text-align: center;
   padding: 2rem;
 }
 
 h1 {
+  color: #3a646d;
   font-size: 3rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 img {
   width: 300px;
   border-radius: 1rem;
+}
+
+a {
+  color: #3a646d;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #e47125;
 }

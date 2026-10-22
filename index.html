@@ -771,27 +771,57 @@ button {
     </aside>
   </section>
 
+  <section>
+    <p class="kicker">Hvor meget kan CSS?</p>
+    <h2>Samme HTML, <strong>forskellig CSS</strong></h2>
+    <div class="css-galleri">
+      <figure>
+        <img src="assets/images/css-ingen.webp" alt="Siden uden CSS: sort tekst på hvid baggrund i browserens standardskrift">
+        <figcaption>Ingen CSS</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/css-tema-1.webp" alt="Tema 1: mørk baggrund, lyseblå overskrift og tre afrundede kort ved siden af hinanden">
+        <figcaption>Tema 1</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/css-tema-2.webp" alt="Tema 2: lys gul baggrund og tre farvede cirkler, der hælder lidt">
+        <figcaption>Tema 2</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/css-tema-3.webp" alt="Tema 3: avisstil med serif-skrift, versal overskrift og tre spalter">
+        <figcaption>Tema 3</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/css-tema-4.webp" alt="Tema 4: sort baggrund, orange lysende overskrift og gule kasser med tykke kanter">
+        <figcaption>Tema 4</figcaption>
+      </figure>
+      <div class="css-galleri__tekst">
+        <p>HTML'en er præcis den samme. Kun CSS'en er skiftet.</p>
+        <p class="lille">Prøv selv: <a href="https://www.w3schools.com/css/css_intro.asp">w3schools.com/css</a></p>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 2 min. Pointe: Det er den samme HTML i alle fem. Kun CSS'en er skiftet: farver, skrift, layout og former.
+      Vis det live: Åbn codesandbox/css-eksempel (eller den sandbox, du har lagt op), og klik mellem temaerne.
+      Eller brug w3schools' demo, hvor man skifter mellem fire stylesheets.
+      [LINK: CodeSandbox, CSS-eksempel]
+    </aside>
+  </section>
+
   <section class="kode-slide" id="trin-3">
     <p class="kicker">Trin 3 · JavaScript</p>
     <h2><strong>JavaScript</strong> er opførslen</h2>
     <div class="kode-og-resultat">
       <div class="kode-kolonne">
-        <pre><code class="language-javascript" data-trim data-line-numbers="1-6|8-10|12-16|14-15">
-// 1. En liste med fun facts
-const fakta = [
-  "MDU tager 2 år – med praktik i en rigtig virksomhed.",
-  "Du lærer både design, UX, content og kode.",
-  "Du arbejder i projekter sammen med andre."
-];
-
-// 2. Find knappen og tekstfeltet på siden
+        <pre><code class="language-javascript" data-trim data-line-numbers="1-3|5-6|7|8">
+// 1. Find knappen og tekstfeltet på siden
 const knap = document.querySelector("button");
 const tekst = document.querySelector("#fakta");
 
-// 3. Når der klikkes: vis et tilfældigt fact
+// 2. Når der klikkes: vis nyt indhold, og skift farve
 knap.addEventListener("click", function () {
-  const nr = Math.floor(Math.random() * fakta.length);
-  tekst.textContent = fakta[nr];
+  tekst.textContent = "På MDU lærer du både design og kode!";
+  document.body.style.backgroundColor = "#3a646d";
 });
         </code></pre>
         <p class="lille">Fil: <code>app.js</code> · kobles på lige før <code>&lt;/body&gt;</code> med <code>&lt;script src="app.js"&gt;&lt;/script&gt;</code></p>
@@ -804,11 +834,11 @@ knap.addEventListener("click", function () {
     <aside class="notes">
       Tid: 09.18–09.23 (5 min.).
       JavaScript ligger i app.js og kobles på nederst i body.
-      1) En liste (et array) med tekster. Hver tekst i anførselstegn, og komma imellem.
-      2) Vi finder knappen og den tomme p på siden. Det er sådan, JS »får fat i« HTML.
-      3) addEventListener: »Når nogen klikker, så gør det her.«
-      4) Vælg et tilfældigt nummer, og skriv teksten ind på siden.
-      Pointe: Det er en rigtig, interaktiv side. Og det er præcis den kode, der ligger i jeres starter.
+      1) Linje 1–3: Vi finder knappen og den tomme p på siden. Sådan »får JS fat i« HTML.
+      2) Linje 5–6: Når nogen klikker på knappen, så … (hvem og hvornår fra »Sådan læser du koden«).
+      3) Linje 7: … skriver vi ny tekst ind på siden.
+      4) Linje 8: … og skifter baggrundsfarven.
+      Pointe: To linjer, og siden reagerer. Det er samme mønster som fun fact-knappen i jeres starter.
       Overgang: »Nu prøver I selv, i CodeSandbox.«
     </aside>
   </section>
@@ -840,33 +870,45 @@ knap.addEventListener("click", function () {
   </section>
 
   <section>
-    <div class="to-kolonner" style="grid-template-columns: 1fr 1.05fr; gap: 48px;">
-      <div>
-        <p class="kicker">Øvelse 1 · index.html og styles.css</p>
-        <h2>1 · <strong>HTML</strong> og CSS</h2>
-        <ol class="trin oevelse-trin">
-          <li><span>Skriv dit navn i overskriften <code>&lt;h1&gt;</code></span></li>
-          <li><span>Tilføj et afsnit mere med <code>&lt;p&gt;</code></span></li>
-          <li><span>Centrér det hele, og skift farve og skriftstørrelse i <code>styles.css</code></span></li>
-          <li><span>Tilføj et billede med <code>&lt;img&gt;</code>, og sæt bredden</span></li>
+    <p class="kicker">Øvelse 1 · index.html og styles.css</p>
+    <h2>1 · <strong>HTML</strong> og CSS</h2>
+    <div class="oevelse-1">
+      <div class="kort" style="--farve: var(--mellow-rose);">
+        <h3>HTML · index.html</h3>
+        <ol class="oevelse-liste">
+          <li>Skriv dit navn i <code>&lt;h1&gt;</code></li>
+          <li>Skriv tre ting om dig selv i <code>&lt;li&gt;</code></li>
+          <li>Tilføj et billede med <code>&lt;img&gt;</code></li>
+          <li>Tilføj et link med <code>&lt;a&gt;</code>, fx til eaaa.dk</li>
         </ol>
-        <p class="lille">Øvelse: <span class="pladsholder-tekst">[LINK: CodeSandbox, øvelse 1]</span> · Løsning: <span class="pladsholder-tekst">[LINK: CodeSandbox, øvelse 1, løsning]</span></p>
+      </div>
+      <div class="kort" style="--farve: var(--seafoam);">
+        <h3>CSS · styles.css</h3>
+        <ol class="oevelse-liste" start="5">
+          <li>Giv siden en baggrundsfarve: <code>background</code></li>
+          <li>Skift farve og størrelse på overskriften: <code>color</code>, <code>font-size</code></li>
+          <li>Centrér teksten: <code>text-align</code></li>
+          <li>Giv billedet bredde og runde hjørner: <code>width</code>, <code>border-radius</code></li>
+        </ol>
+        <p class="lille">Bonus: farve på linket, når musen er over: <code>a:hover</code></p>
       </div>
       <div class="foer-efter">
         <figure class="resultat">
           <figcaption>Start</figcaption>
-          <img src="assets/images/oevelse-1-start.webp" alt="Startsiden: en overskrift »Hej, jeg hedder …« og et afsnit uden styling">
+          <img src="assets/images/oevelse-1-start.webp" alt="Startsiden: overskriften »Hej, jeg hedder …«, et afsnit og en tom liste med tre punkter uden styling">
         </figure>
         <figure class="resultat">
           <figcaption>Mål</figcaption>
-          <img src="assets/images/oevelse-1-maal.webp" alt="Løsningen: centreret tekst i farve, en stor overskrift med navn, to afsnit og et billede med runde hjørner">
+          <img src="assets/images/oevelse-1-maal.webp" alt="Løsningen: centreret tekst i farve, en stor overskrift med navn og et billede med runde hjørner">
         </figure>
       </div>
     </div>
+    <p class="lille" style="margin-top: 0.8em;">Øvelse: <span class="pladsholder-tekst">[LINK: CodeSandbox, øvelse 1]</span> · Løsning: <span class="pladsholder-tekst">[LINK: CodeSandbox, øvelse 1, løsning]</span></p>
     <aside class="notes">
-      Tid: 09.25–09.31 (6 min.). Kod med på storskærmen, mens de prøver selv.
-      Tip: text-align: center på body centrerer alt. Billedet i løsningen ligger i sandboxen som billede.webp.
-      De kan også bruge et link til et billede fra nettet i src.
+      Tid: 09.25–09.33 (8 min.). Starteren er en lille »Om mig«-side med overskrift, afsnit og en liste.
+      Lad dem tage HTML-opgaverne først og derefter CSS. Kod med på storskærmen.
+      Tip: text-align: center på body centrerer alt. Billedet i løsningen ligger i sandboxen som billede.webp,
+      men de kan også bruge et link til et billede fra nettet i src.
       Filerne ligger i codesandbox/1-html-css og codesandbox/1-html-css-loesning.
     </aside>
   </section>
