@@ -1,4 +1,6 @@
-/* Prøv at ændre farver, størrelser og afstande her */
+/* STYLES.CSS – udseendet. Skriv dine CSS-regler her, og gem.
+   Farver fra EAAA's designguide: #3a646d #80b4bf #f3f4f7 #f0e87d #e47125 */
+
 body {
   font-family: system-ui, sans-serif;
 }

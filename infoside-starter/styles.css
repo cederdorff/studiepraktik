@@ -1,229 +1,65 @@
-/* =========================================================
-   STYLES.CSS – udseendet
-   Her bestemmer I, hvordan siden ser ud.
-   Prøv at ændre en værdi, gem filen og opdatér browseren.
-   ========================================================= */
-
-
-/* ---------- 1. FARVER ----------
-   Skift farverne her – så ændrer hele siden sig på én gang.
-   Farverne kommer fra Erhvervsakademi Aarhus' designguide. */
-:root {
-  --baggrund: #f3f4f7;    /* sidens baggrund */
-  --flade: #ffffff;       /* kortene */
-  --tekst: #1d2f33;       /* almindelig tekst */
-  --accent: #3a646d;      /* overskrifter og knapper */
-  --knap-tekst: #ffffff;  /* tekst på knapperne */
-  --highlight: #f0e87d;   /* boksen med fun facts */
-  --cirkel: #bed4db;      /* den runde pynt i toppen */
-  --runding: 1.25rem;     /* hvor runde hjørnerne er */
-}
-
-/* Mørkt tema. Slås til og fra af "Skift tema"-knappen (se app.js) */
-.moerkt-tema {
-  --baggrund: #0c1c20;
-  --flade: #15303a;
-  --tekst: #f3f4f7;
-  --accent: #80b4bf;
-  --knap-tekst: #0c1c20;
-  --cirkel: #3a646d;
-}
-
-
-/* ---------- 2. GRUNDLÆGGENDE ---------- */
-* {
-  box-sizing: border-box;
-}
+/* Farver fra EAAA's designguide: #3a646d #80b4bf #f3f4f7 #f0e87d #e47125 */
 
 body {
-  margin: 0;
-  font-family: "Montserrat", "Lucida Sans", sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  background: var(--baggrund);
-  color: var(--tekst);
-  transition: background 0.3s, color 0.3s;
+  font-family: system-ui, sans-serif;
+  background: #f3f4f7;
+  color: #1d2f33;
+  max-width: 600px; /* smal side, så den ser godt ud på både mobil og computer */
+  margin: 0 auto;
+  padding: 20px;
 }
 
-h1,
-h2 {
-  color: var(--accent);
-  line-height: 1.15;
-  margin: 0 0 0.5em;
-}
-
-/* Overskrifter er tynde (300) – og ord i <strong> bliver fede */
 h1 {
-  font-size: 2.4rem;
-  font-weight: 300;
-}
-
-h1 strong {
-  font-weight: 800;
+  color: #3a646d;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
+  color: #3a646d;
+}
+
+/* De hvide kort */
+section {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* Videoen fylder kortets bredde */
+iframe,
+video {
+  width: 100%;
+  height: 320px;
+  border: none;
+  border-radius: 12px;
+  background: black;
 }
 
 a {
-  color: var(--accent);
+  color: #3a646d;
+  font-weight: bold;
 }
 
-
-/* ---------- 3. TOPPEN ---------- */
-.top {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 3rem 1.25rem 2rem;
-  max-width: 40rem;
-  margin: 0 auto;
+a:hover {
+  color: #e47125;
 }
 
-/* Den store cirkel bag overskriften */
-.top::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -4rem;
-  right: -5rem;
-  width: 16rem;
-  height: 16rem;
-  border-radius: 50%;
-  background: var(--cirkel);
-  opacity: 0.6;
-}
-
-.lille-overskrift {
-  margin: 0 0 0.5rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.intro {
-  font-size: 1.15rem;
-  font-weight: 300;
-}
-
-
-/* ---------- 4. KORTENE ---------- */
-main {
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.kort {
-  background: var(--flade);
-  border-radius: var(--runding);
-  padding: 1.5rem 1.25rem;
-  margin-bottom: 1rem;
-}
-
-
-/* ---------- 5. VIDEOEN ---------- */
-.video video,
-.video iframe {
-  display: block;
-  width: 100%;
-  border: 0;
-  border-radius: var(--runding);
-  background: #000;
-}
-
-/* Lodret video (reel/short) må ikke blive højere end skærmen */
-.video video {
-  max-height: 80vh;
-}
-
-/* YouTube-video. Til en Short: skift 16 / 9 til 9 / 16 */
-.video iframe {
-  aspect-ratio: 16 / 9;
-}
-
-
-/* ---------- 6. KNAPPER ---------- */
-.knap {
-  display: inline-block;
-  font: inherit;
-  font-weight: 700;
-  text-decoration: none;
-  background: var(--accent);
-  color: var(--knap-tekst);
-  border: 2px solid var(--accent);
-  border-radius: 999px;
-  padding: 0.75rem 1.5rem;
+button {
+  background: #3a646d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
-.knap:hover {
-  opacity: 0.85;
+button:hover {
+  background: #e47125;
 }
 
-/* En knap med kant i stedet for fyld */
-.knap--kant {
-  background: transparent;
-  color: var(--accent);
-}
-
-
-/* ---------- 7. FUN FACT OG NAVNE ---------- */
-.fakta {
-  background: var(--highlight);
-  color: #1d2f33;
-  border-radius: var(--runding);
-  padding: 1rem 1.25rem;
-  font-weight: 700;
-}
-
-/* Skjul boksen, indtil der står noget i den */
-.fakta:empty {
-  display: none;
-}
-
-.navne {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.navne li {
-  border: 2px solid var(--accent);
-  border-radius: 999px;
-  padding: 0.25rem 0.9rem;
-}
-
-
-/* ---------- 8. BUNDEN ---------- */
-.bund {
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 1rem 1rem 3rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-
-/* ---------- 9. STØRRE SKÆRME ----------
-   Alt herover er lavet til mobilen først.
-   Her bliver tingene lidt større på en computer. */
-@media (min-width: 48rem) {
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  .top {
-    padding-top: 5rem;
-  }
-
-  .kort {
-    padding: 2rem;
-  }
+#fakta-tekst {
+  font-weight: bold;
+  color: #e47125;
 }

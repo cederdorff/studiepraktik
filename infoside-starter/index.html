@@ -3,103 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Teksten i browserfanen. Skriv jeres egen titel her -->
   <title>Et glimt af MDU</title>
-
-  <!-- Skrifttypen Montserrat fra Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
-
-  <!-- Her kobles udseendet (CSS) på siden -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Starter til jeres infoside til casen »Et glimt af MDU«.
+       Skift teksterne ud med jeres egne, sæt videoen ind, og gør designet til jeres eget. -->
 
-  <!-- ========== TOPPEN AF SIDEN ========== -->
-  <header class="top">
-    <p class="lille-overskrift">Et glimt af MDU</p>
+  <!-- Jeres budskab: kort og skarpt -->
+  <h1>Jeres budskab her</h1>
+  <p>Skriv en kort sætning, der giver lyst til at se videoen.</p>
 
-    <!-- Skriv jeres budskab her. Kort og skarpt – det er det første, man ser! -->
-    <h1>Jeres <strong>budskab</strong> her</h1>
+  <section>
+    <h2>Se vores video</h2>
+    <!-- Eksempel-video fra EAAA. Skift den ud med jeres egen:
+         - Uploadet video: Træk den ind i CodeSandbox, kald den video.mp4,
+           og skriv <video src="video.mp4" controls></video> i stedet for <iframe>.
+         - På YouTube: Skift koden efter /embed/ ud med koden fra jeres videos link.
+         - På TikTok eller Instagram: Slet <iframe>, og ret linket herunder. -->
+    <iframe src="https://www.youtube.com/embed/-ck-7NS9d5U" title="Uddan dig til multimediedesigner på Erhvervsakademi Aarhus" allowfullscreen></iframe>
+    <p><a href="https://www.youtube.com/watch?v=-ck-7NS9d5U">Se videoen på YouTube</a></p>
+  </section>
 
-    <!-- En sætning, der giver lyst til at læse videre -->
-    <p class="intro">Skriv en kort sætning, der giver lyst til at se videoen.</p>
-  </header>
+  <section>
+    <h2>Hvorfor læse multimediedesign?</h2>
+    <p>Skriv jeres egne grunde her. Hvad overraskede jer? Hvorfor skulle en på jeres alder have lyst til at læse det?</p>
+  </section>
 
-  <main>
+  <section>
+    <h2>Fun fact om MDU</h2>
+    <button id="fakta-knap">Vis et fun fact</button>
+    <p id="fakta-tekst"></p>
+  </section>
 
-    <!-- ========== VIDEOEN ========== -->
-    <section class="kort">
-      <h2>Se vores video</h2>
+  <section>
+    <h2>Lavet af</h2>
+    <ul>
+      <li>Navn 1</li>
+      <li>Navn 2</li>
+      <li>Navn 3</li>
+      <li>Navn 4</li>
+      <li>Navn 5</li>
+    </ul>
+  </section>
 
-      <div class="video">
-        <!-- Indsæt link til jeres video her. Vælg ÉN af mulighederne og slet de andre.
+  <p><a href="https://www.eaaa.dk/videregaende-uddannelser/erhvervsakademiuddannelse/multimediedesigner/">Læs mere om MDU på eaaa.dk</a></p>
 
-             MULIGHED A – link til TikTok, Instagram eller YouTube (nemmest):
-             Erstat INDSÆT-LINK-HER med linket til jeres video. -->
-        <a class="knap" href="INDSÆT-LINK-HER">Se vores video</a>
-
-        <!-- MULIGHED B – YouTube indlejret på siden (fx som "skjult" video eller Short):
-             Erstat VIDEO-ID med koden fra jeres YouTube-link, og slet de to
-             linjer med kommentar-tegn lige over og under <iframe>. -->
-        <!--
-        <iframe src="https://www.youtube.com/embed/VIDEO-ID" title="Vores video om MDU" allowfullscreen></iframe>
-        -->
-
-        <!-- MULIGHED C – videofil i sandboxen (kun hvis filen er lille):
-             Upload en .mp4 til CodeSandbox, kald den video.mp4,
-             og slet kommentar-tegnene over og under <video>. -->
-        <!--
-        <video src="video.mp4" controls playsinline></video>
-        -->
-      </div>
-    </section>
-
-    <!-- ========== HVORFOR MDU? ========== -->
-    <section class="kort">
-      <h2>Hvorfor læse multimediedesign?</h2>
-      <!-- Skriv et par linjer om, hvorfor man skal læse MDU – med jeres egne ord -->
-      <p>
-        Skriv jeres egne grunde her. Hvad overraskede jer? Hvad var sjovt?
-        Hvorfor skulle en på jeres alder have lyst til at læse det?
-      </p>
-    </section>
-
-    <!-- ========== JAVASCRIPT: FUN FACT ========== -->
-    <!-- Knappen virker, fordi app.js "lytter" efter klik på id="fakta-knap" -->
-    <section class="kort">
-      <h2>Fun fact om MDU</h2>
-      <button id="fakta-knap" class="knap">Vis et fun fact</button>
-      <p id="fakta-tekst" class="fakta" aria-live="polite"></p>
-    </section>
-
-    <!-- ========== GRUPPEN ========== -->
-    <section class="kort">
-      <h2>Lavet af</h2>
-      <!-- Skriv jeres navne her – én <li> pr. person -->
-      <ul class="navne">
-        <li>Navn 1</li>
-        <li>Navn 2</li>
-        <li>Navn 3</li>
-        <li>Navn 4</li>
-        <li>Navn 5</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- ========== BUNDEN AF SIDEN ========== -->
-  <footer class="bund">
-    <a class="knap" href="https://www.eaaa.dk/videregaende-uddannelser/erhvervsakademiuddannelse/multimediedesigner/">
-      Læs mere om MDU på eaaa.dk
-    </a>
-    <!-- Endnu et JavaScript-eksempel: skifter mellem lyst og mørkt tema -->
-    <button id="tema-knap" class="knap knap--kant">Skift tema</button>
-  </footer>
-
-  <!-- Her kobles opførslen (JavaScript) på siden. Skal stå nederst -->
   <script src="app.js"></script>
 </body>
 </html>

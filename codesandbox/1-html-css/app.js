@@ -1,1 +1,1 @@
-// JavaScript kommer i øvelse 2
+// Øvelse 2: Skriv din JavaScript her

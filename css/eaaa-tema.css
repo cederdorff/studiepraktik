@@ -1091,6 +1091,10 @@ html.reveal-print .reveal > .cover-video {
   overflow: hidden;
 }
 
+.reveal .anatomi__kode--flere {
+  white-space: pre;
+}
+
 .reveal .anatomi__forklaring {
   list-style: none;
   margin: 0;
@@ -1364,6 +1368,7 @@ html.reveal-print .reveal > .cover-video {
 /* Øvelse 1: HTML-opgaver, CSS-opgaver og start/mål */
 .reveal .oevelse-1 {
   display: grid;
+  margin-top: -6px;
   grid-template-columns: 1fr 1fr 0.9fr;
   gap: 20px;
   align-items: stretch;
@@ -1389,6 +1394,13 @@ html.reveal-print .reveal > .cover-video {
 
 .reveal .oevelse-liste li {
   margin: 0.45em 0;
+}
+
+.reveal .oevelse-tip {
+  display: block;
+  margin-top: 0.3em;
+  font-size: 0.85em;
+  color: var(--highlight);
 }
 
 .reveal .oevelse-1 .lille {
@@ -1435,7 +1447,7 @@ html.reveal-print .reveal > .cover-video {
 }
 
 .reveal .foer-efter .resultat img {
-  max-height: 210px;
+  max-height: 150px;
   width: 100%;
   object-fit: cover;
   object-position: top;

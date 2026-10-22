@@ -28,11 +28,13 @@ Alle eksempler bruger samme struktur: `index.html`, `styles.css` og `app.js`, pl
 
 | Mappe | Bruges til |
 | --- | --- |
+| `codesandbox/css-eksempel` | Samme HTML med fire CSS-temaer (vis live efter trin 2) |
 | `codesandbox/1-html-css` | Øvelse 1, start |
 | `codesandbox/1-html-css-loesning` | Øvelse 1, løsning |
-| `codesandbox/2-knap` | Øvelse 2: knap, der ændrer siden |
-| `codesandbox/3-input` | Øvelse 3: input og hilsen |
-| `infoside-starter` | Starteren til casen (demo-trinene ligger i `infoside-starter/demo`) |
+| `codesandbox/2-knap-loesning` | Øvelse 2, løsning (praktikanterne fortsætter i deres fork fra øvelse 1) |
+| `codesandbox/3-input-loesning` | Øvelse 3, løsning (bygger videre på øvelse 2) |
+| `codesandbox/demo` | Demo-trinene 1–3 fra kodeslides |
+| `infoside-starter` | Starteren til casen: kun `index.html`, `styles.css` og `app.js` |
 
 Sådan kommer en mappe i CodeSandbox:
 
@@ -52,4 +54,4 @@ codesandbox/          Øvelse 1–3 til CodeSandbox
 infoside-starter/     Skabelonen, praktikanterne forker i CodeSandbox
 ```
 
-Ret du i demo-koden, skal det ske i `infoside-starter/demo/trin-*` og i kodeslides i `index.html`. Billederne `assets/images/demo-trin-*.webp` er screenshots af demo-trinene og skal tages igen.
+Ret du i demo-koden, skal det ske i `codesandbox/demo/trin-*` og i kodeslides i `index.html`. Billederne `assets/images/demo-trin-*.webp` er screenshots af demo-trinene og skal tages igen.
