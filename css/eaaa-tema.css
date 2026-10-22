@@ -1440,6 +1440,50 @@ html.reveal-print .reveal > .cover-video {
   font-size: 0.7em;
 }
 
+/* CSS Grid: eksempler */
+.reveal .grid-eksempler {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.reveal .grid-eksempler figure,
+.reveal .grid-skaerme figure {
+  margin: 0;
+}
+
+.reveal .grid-eksempler img,
+.reveal .grid-skaerme img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--kant);
+}
+
+.reveal .grid-eksempler figcaption,
+.reveal .grid-skaerme figcaption {
+  font-size: 0.45em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tekst-sekundaer);
+  margin-top: 8px;
+}
+
+.reveal .grid-skaerme {
+  display: grid;
+  grid-template-columns: 0.42fr 1fr;
+  gap: 16px;
+  align-items: end;
+}
+
+.reveal .grid-skaerme img {
+  max-height: 400px;
+  object-fit: cover;
+  object-position: top;
+}
+
 /* Start og mål side om side */
 .reveal .foer-efter {
   display: grid;

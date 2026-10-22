@@ -814,6 +814,77 @@ button {
     </aside>
   </section>
 
+  <section>
+    <p class="kicker">Layout med CSS</p>
+    <h2>CSS <strong>Grid</strong></h2>
+    <div class="grid-eksempler">
+      <figure>
+        <img src="assets/images/grid-kort.webp" alt="Seks kort med billede, overskrift og tekst sat i et gitter med tre kolonner og to rækker">
+        <figcaption>Kort i et gitter</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/grid-sidelayout.webp" alt="Klassisk sidelayout med header øverst, menu til venstre, indhold til højre og footer nederst">
+        <figcaption>Sidelayout: header, menu, indhold, footer</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/images/grid-galleri.webp" alt="Billedgalleri, hvor nogle billeder fylder to kolonner eller to rækker">
+        <figcaption>Galleri med store og små billeder</figcaption>
+      </figure>
+    </div>
+    <p class="lille" style="margin-top: 0.8em;">Grid deler siden op i kolonner og rækker, og så placerer man indholdet i felterne.</p>
+    <aside class="notes">
+      Tid: 09.09–09.10 (1 min.). Fra den gamle Keynote (»Grid og Flexbox«). Bare eksempler, ingen opgave.
+      Grid og Flexbox er to CSS-modeller, der gør det nemt at lave layouts med få regler, og de virker på både mobil og computer.
+      Alle tre er lavet med display: grid. Det er sådan, de fleste websites er bygget op.
+    </aside>
+  </section>
+
+  <section class="kode-slide">
+    <p class="kicker">Layout med CSS</p>
+    <h2>Grid på få <strong>linjer</strong></h2>
+    <div class="kode-og-resultat" style="grid-template-columns: 1fr 1.15fr; align-items: center;">
+      <div class="kode-kolonne">
+        <pre><code class="language-css" data-trim data-line-numbers="1-6|8-12|14-18">
+/* Mobil: én kolonne */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Tablet: to kolonner */
+@media (min-width: 600px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Computer: tre kolonner */
+@media (min-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+        </code></pre>
+        <p class="lille">Fil: <code>styles.css</code> · Flere skabeloner: <a href="https://www.w3schools.com/css/css_templates.asp">w3schools.com/css/css_templates.asp</a></p>
+      </div>
+      <div class="grid-skaerme">
+        <figure>
+          <img src="assets/images/grid-mobil.webp" alt="Kort-siden på en mobil, hvor kortene står under hinanden i én kolonne">
+          <figcaption>Mobil · 1 kolonne</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/grid-kort.webp" alt="Kort-siden på en computer med tre kolonner">
+          <figcaption>Computer · 3 kolonner</figcaption>
+        </figure>
+      </div>
+    </div>
+    <aside class="notes">
+      Tid: 09.10–09.12 (2 min.). Samme HTML på alle skærme. Kun antallet af kolonner skifter.
+      1) display: grid gør elementet til et gitter. 1fr betyder »en lige stor del«. gap er afstanden mellem kortene.
+      2) @media: »Når skærmen er mindst 600 px bred, så brug to kolonner.«
+      3) Fra 900 px: tre kolonner. Det kaldes responsivt design.
+      Vis evt. live: codesandbox/grid-eksempel, og gør preview-vinduet smallere. [LINK: CodeSandbox, grid-eksempel]
+      w3schools har færdige layout-skabeloner, man kan lege med.
+    </aside>
+  </section>
+
   <section class="kode-slide" id="trin-3">
     <p class="kicker">Trin 3 · JavaScript</p>
     <h2><strong>JavaScript</strong> er opførslen</h2>
@@ -838,7 +909,7 @@ knap.addEventListener("click", function () {
       </figure>
     </div>
     <aside class="notes">
-      Tid: 09.09–09.12 (3 min.).
+      Tid: 09.12–09.15 (3 min.).
       JavaScript ligger i app.js og kobles på nederst i body.
       1) Linje 1–3: Vi finder knappen og den tomme p på siden. Sådan »får JS fat i« HTML.
       2) Linje 5–6: Når nogen klikker på knappen, så … (hvem og hvornår fra »Sådan læser du koden«).
@@ -869,7 +940,7 @@ knap.addEventListener("click", function () {
       </div>
     </div>
     <aside class="notes">
-      Tid: 09.12–09.14 (2 min.). Intet at installere. Alt kører i browseren.
+      Tid: 09.15–09.17 (2 min.). Intet at installere. Alt kører i browseren.
       Få alle til at logge ind nu, så det er klaret, før casen starter.
       Pointe: Alle øvelser, demoen og infoside-starteren har de samme tre filer.
     </aside>
@@ -912,7 +983,7 @@ knap.addEventListener("click", function () {
     </div>
     <p class="lille" style="margin-top: 0.8em;">Øvelse: <a href="https://codesandbox.io/p/sandbox/1-html-css-ck92px">Åbn øvelsen i CodeSandbox</a> · Løsning: <a href="https://codesandbox.io/p/sandbox/1-html-css-loesning-3gq2kt">Se løsningen</a></p>
     <aside class="notes">
-      Tid: 09.14–09.22 (8 min.). Starteren er en lille »Om mig«-side med overskrift, afsnit og en liste.
+      Tid: 09.17–09.27 (10 min.). Starteren er en lille »Om mig«-side med overskrift, afsnit og en liste.
       Lad dem tage HTML-opgaverne først og derefter CSS. Kod med på storskærmen.
       Tip: text-align: center på body centrerer alt.
       Skrifttyper, der virker uden download: Georgia, serif · "Courier New", monospace · "Trebuchet MS", sans-serif · Impact.
@@ -957,7 +1028,7 @@ button:hover {
       </div>
     </div>
     <aside class="notes">
-      Tid: 09.22–09.25 (3 min.). Ingen ny sandbox: De arbejder videre i deres egen fork fra øvelse 1.
+      Tid: 09.27–09.31 (4 min.). Ingen ny sandbox: De arbejder videre i deres egen fork fra øvelse 1.
       Linje 1–7: knappens udseende. border: none; fjerner den grå standardkant.
       Linje 9–11: button:hover virker som a:hover fra øvelse 1. Det gælder kun, mens musen er over.
       Bonus: transition: 0.2s; på button gør skiftet blødt.
@@ -994,7 +1065,7 @@ knap.addEventListener("click", function () {
       </div>
     </div>
     <aside class="notes">
-      Tid: 09.25–09.29 (4 min.).
+      Tid: 09.31–09.36 (5 min.).
       Linje 1–3: find knappen og overskriften. Linje 5–6: når der klikkes …
       Linje 7–8: … skift teksten og baggrunden. Samme mønster som trin 3: hvem, hvornår og hvad.
       Opgave 4 og bonus: Nye linjer skal stå inde mellem { og }, ellers sker de ikke ved klik.
@@ -1041,79 +1112,18 @@ hilsenKnap.addEventListener("click", function () {
       </div>
     </div>
     <aside class="notes">
-      Tid: 09.29–09.33 (4 min., spring over, hvis tiden er knap). Stadig samme sandbox som øvelse 1 og 2.
+      Tid: 09.36–09.42 (6 min.) + 3 min. buffer. Stadig samme sandbox som øvelse 1 og 2.
       Hvorfor id? Nu er der to knapper på siden. querySelector("button") finder altid den første,
       så den nye knap får id="hilsen-knap", og vi finder den med "#hilsen-knap".
       Linje 8: .value læser det, der står i feltet. + sætter tekst sammen.
       Overskriften <h2> gør, at knappen fra øvelse 2 står for sig selv, og at feltet og »Sig hej« står samlet under.
       Typisk fejl: koden skrives inde i { } fra øvelse 2. Den skal stå nederst, uden for.
       Det er samme mønster som fun fact-knappen i jeres starter til casen.
+      Overgang: »Det, I lige har lavet, er præcis det, I skal bruge til jeres infoside. Nu tilbage til casen.«
     </aside>
   </section>
 
   <!-- ---------- Overgang til casen (ca. 10 min.) ---------- -->
-
-  <section>
-    <p class="kicker">Til casen</p>
-    <h2>Jeres <strong>infoside</strong> i CodeSandbox</h2>
-    <p class="lille" style="margin-bottom: 0.8em;">Her bygger I den lille infoside, der hører til jeres video. Samme tre filer som i øvelserne.</p>
-    <ol class="trin">
-      <li><span>Åbn starteren<small><a href="https://codesandbox.io/p/sandbox/infosite-starter-f3pjsd">codesandbox.io/p/sandbox/infosite-starter-f3pjsd</a></small></span></li>
-      <li><span>Tryk <strong>Fork</strong>, så får gruppen sin egen kopi</span></li>
-      <li><span>Ret i <code>index.html</code>, <code>styles.css</code> og <code>app.js</code><small>Preview til højre opdaterer, når I gemmer</small></span></li>
-      <li><span>Del linket til jeres sandbox i gruppen</span></li>
-    </ol>
-    <p class="lille" style="margin-top: 0.8em;">Videoen: Starteren viser en eksempel-video fra EAAA. Skift den ud med jeres egen: upload filen til sandboxen, eller brug YouTube, TikTok eller Instagram.</p>
-    <aside class="notes">
-      Tid: 09.33–09.36 (3 min.). Åbn starteren, og vis den: budskab, video, fun fact-knap og navne. Den er bygget som jeres side fra øvelserne.
-      Kun én i gruppen behøver at forke. Resten kan følge med via linket.
-      Videoen: De må gerne prøve at uploade video.mp4 direkte i CodeSandbox (træk filen ind i filpanelet).
-      Er filen for stor, eller virker det ikke, så link til videoen på TikTok, Instagram eller YouTube (skjult). Begge dele er ok.
-      Starteren viser EAAA's video »Uddan dig til multimediedesigner« som eksempel, så siden ser færdig ud fra start.
-      Alle tre muligheder (upload, YouTube og link) står som kommentar i index.html.
-    </aside>
-  </section>
-
-  <section>
-    <div class="to-kolonner" style="grid-template-columns: 0.85fr 1.3fr;">
-      <div>
-        <h2>Det er der i <strong>starteren</strong></h2>
-        <p class="lille">En færdig lille infoside til casen. Den virker allerede. I skal bare gøre den til jeres egen.</p>
-      </div>
-      <ul class="filtrae">
-        <li class="mappe"><span>infoside-starter/</span></li>
-        <li><span>index.html</span><span>Indholdet: budskab, video, tekst og navne</span></li>
-        <li><span>styles.css</span><span>Udseendet: samme regler som i øvelserne</span></li>
-        <li><span>app.js</span><span>Opførslen: fun fact-knappen</span></li>
-      </ul>
-    </div>
-    <aside class="notes">
-      Tid: 09.36–09.38 (2 min.). Vis kommentarerne, fx »Skriv jeres budskab her« og »Indsæt link til jeres video her«.
-      Skift én farve live i styles.css, fx på button. JavaScript i app.js er samme mønster som øvelse 2 og 3: find med #id, lyt efter klik, gør noget.
-    </aside>
-  </section>
-
-  <section>
-    <div class="to-kolonner">
-      <div>
-        <h2>Når I <strong>sidder fast</strong></h2>
-        <ul class="punkter">
-          <li>Læs kommentarerne i koden</li>
-          <li>Spørg AI, og bed om en forklaring</li>
-          <li>Slå op på w3schools.com</li>
-          <li>Spørg os. Vi går rundt hele dagen</li>
-        </ul>
-      </div>
-      <img class="rund-billede rund-billede--lille" src="assets/images/studerende-prototype-pap.webp"
-        alt="En gruppe studerende står bøjet over en prototype af pap med ledninger koblet til en bærbar computer">
-    </div>
-    <aside class="notes">
-      Tid: 09.38–09.40 (2 min.) + 5 min. buffer til kl. 09.45.
-      AI-tip: Skriv »Forklar linje for linje, hvad den her kode gør«, ikke kun »lav det for mig«.
-      Husk: Ved fremvisningen skal I kunne forklare jeres kode.
-      Overgang: »Så er det tilbage til casen.«
-    </aside>
-  </section>
 
 </section>
 
@@ -1191,7 +1201,7 @@ hilsenKnap.addEventListener("click", function () {
           <li><span>Jeres budskab som overskrift</span></li>
           <li><span>Videoen, indlejret eller som link</span></li>
           <li><span>Et par linjer om, hvorfor man skal læse MDU</span></li>
-          <li><span>Mindst én ting med JavaScript<small>fx fun fact-knappen i starteren</small></span></li>
+          <li><span>Mindst én ting med JavaScript<small>fx jeres eget fun fact, eller noget fra øvelserne</small></span></li>
           <li><span>Jeres navne og et link til MDU på eaaa.dk</span></li>
         </ol>
         <div class="infoside-chips">
@@ -1203,10 +1213,72 @@ hilsenKnap.addEventListener("click", function () {
       </div>
     </div>
     <aside class="notes">
-      Tid: 09.47–09.50. Til venstre: starteren på en mobil. Listen følger siden oppefra og ned.
+      Tid: 09.47–09.49 (2 min.). Til venstre: starteren på en mobil. Listen følger siden oppefra og ned.
       Starteren opfylder allerede det meste. I skal skrive jeres eget indhold og indsætte videoen.
       JavaScript-kravet er opfyldt med fun fact-knappen, men skriv jeres egne facts, eller lav noget nyt.
       Det handler om at prøve at kode, ikke om et perfekt website.
+    </aside>
+  </section>
+
+  <section>
+    <p class="kicker">Til casen</p>
+    <h2>Jeres <strong>infoside</strong> i CodeSandbox</h2>
+    <p class="lille" style="margin-bottom: 0.8em;">Her bygger I den lille infoside, der hører til jeres video. Samme tre filer som i øvelserne.</p>
+    <ol class="trin">
+      <li><span>Åbn starteren<small><a href="https://codesandbox.io/p/sandbox/infosite-starter-f3pjsd">codesandbox.io/p/sandbox/infosite-starter-f3pjsd</a></small></span></li>
+      <li><span>Tryk <strong>Fork</strong>, så får gruppen sin egen kopi</span></li>
+      <li><span>Ret i <code>index.html</code>, <code>styles.css</code> og <code>app.js</code><small>Preview til højre opdaterer, når I gemmer</small></span></li>
+      <li><span>Del linket til jeres sandbox i gruppen</span></li>
+    </ol>
+    <p class="lille" style="margin-top: 0.8em;">Videoen: Starteren viser en eksempel-video fra EAAA. Skift den ud med jeres egen: upload filen til sandboxen, eller brug YouTube, TikTok eller Instagram.</p>
+    <aside class="notes">
+      Tid: 09.49–09.52 (3 min.). Åbn starteren, og vis den: budskab, video, fun fact-knap og navne. Den er bygget som jeres side fra øvelserne.
+      Kun én i gruppen behøver at forke. Resten kan følge med via linket.
+      Videoen: De må gerne prøve at uploade video.mp4 direkte i CodeSandbox (træk filen ind i filpanelet).
+      Er filen for stor, eller virker det ikke, så link til videoen på TikTok, Instagram eller YouTube (skjult). Begge dele er ok.
+      Starteren viser EAAA's video »Uddan dig til multimediedesigner« som eksempel, så siden ser færdig ud fra start.
+      Alle tre muligheder (upload, YouTube og link) står som kommentar i index.html.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner" style="grid-template-columns: 0.85fr 1.3fr;">
+      <div>
+        <h2>Det er der i <strong>starteren</strong></h2>
+        <p class="lille">En færdig lille infoside til casen. Den virker allerede. I skal bare gøre den til jeres egen.</p>
+      </div>
+      <ul class="filtrae">
+        <li class="mappe"><span>infoside-starter/</span></li>
+        <li><span>index.html</span><span>Indholdet: budskab, video, tekst og navne</span></li>
+        <li><span>styles.css</span><span>Udseendet: samme regler som i øvelserne</span></li>
+        <li><span>app.js</span><span>Opførslen: fun fact-knappen</span></li>
+      </ul>
+    </div>
+    <aside class="notes">
+      Tid: 09.52–09.54 (2 min.). Vis kommentarerne, fx »Skriv jeres budskab her« og »Indsæt link til jeres video her«.
+      Skift én farve live i styles.css, fx på button. JavaScript i app.js er samme mønster som øvelse 2 og 3: find med #id, lyt efter klik, gør noget.
+    </aside>
+  </section>
+
+  <section>
+    <div class="to-kolonner">
+      <div>
+        <h2>Når I <strong>sidder fast</strong></h2>
+        <ul class="punkter">
+          <li>Læs kommentarerne i koden</li>
+          <li>Spørg AI, og bed om en forklaring</li>
+          <li>Slå op på w3schools.com</li>
+          <li>Spørg os. Vi går rundt hele dagen</li>
+        </ul>
+      </div>
+      <img class="rund-billede rund-billede--lille" src="assets/images/studerende-prototype-pap.webp"
+        alt="En gruppe studerende står bøjet over en prototype af pap med ledninger koblet til en bærbar computer">
+    </div>
+    <aside class="notes">
+      Tid: 09.54–09.56 (2 min.). Derefter: gå i gang.
+      AI-tip: Skriv »Forklar linje for linje, hvad den her kode gør«, ikke kun »lav det for mig«.
+      Husk: Ved fremvisningen skal I kunne forklare jeres kode.
+      Overgang: »Så er det jer. God arbejdslyst!« Lad sliden stå, mens de går i gang.
     </aside>
   </section>
 
@@ -1453,10 +1525,10 @@ hilsenKnap.addEventListener("click", function () {
       <div>
         <h2>Klar til <strong>kl. 13.45</strong>?</h2>
         <ul class="tjekliste" style="font-size: 0.72em;">
-          <li>Videoen er klippet og lagt op</li>
+          <li>Videoen er klippet og uploadet eller lagt online</li>
           <li>Videoen er på infosiden</li>
           <li>Budskab, tekst, navne og link til eaaa.dk</li>
-          <li>Mindst én ting virker med JavaScript</li>
+          <li>Mindst én ting virker med JavaScript, og I kan forklare den</li>
           <li>Linket til jeres sandbox er afleveret</li>
         </ul>
       </div>

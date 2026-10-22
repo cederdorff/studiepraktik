@@ -28,6 +28,7 @@ Alle eksempler bruger samme struktur: `index.html`, `styles.css` og `app.js`, pl
 
 | Mappe | Bruges til |
 | --- | --- |
+| `codesandbox/grid-eksempel` | Kort i et responsivt gitter (vis live efter CSS-sliden) |
 | `codesandbox/css-eksempel` | Samme HTML med fire CSS-temaer (vis live efter trin 2) |
 | `codesandbox/1-html-css` | Øvelse 1, start |
 | `codesandbox/1-html-css-loesning` | Øvelse 1, løsning |
