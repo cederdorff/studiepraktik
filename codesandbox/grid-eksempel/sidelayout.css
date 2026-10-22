@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f3f4f7;
+  color: #1d2f33;
+}
+
+/* Siden deles op i felter med navne */
+.side {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 80px 1fr 60px;
+  grid-template-areas:
+    "header header"
+    "menu   indhold"
+    "footer footer";
+  gap: 12px;
+  padding: 12px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+header  { grid-area: header;  background: #3a646d; color: white; }
+nav     { grid-area: menu;    background: #bed4db; }
+main    { grid-area: indhold; background: white; }
+footer  { grid-area: footer;  background: #80b4bf; }
+
+header, nav, main, footer {
+  border-radius: 12px;
+  padding: 16px;
+  font-weight: bold;
+}
+
+h1 {
+  margin-top: 0;
+  color: #3a646d;
+}
+
+nav p,
+main p {
+  font-weight: normal;
+}
+
+/* På mobil: alt under hinanden */
+@media (max-width: 600px) {
+  .side {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "menu"
+      "indhold"
+      "footer";
+    height: auto;
+  }
+}
